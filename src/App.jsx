@@ -12,7 +12,7 @@ function MainAppContent() {
   const [showNewUi, setShowNewUi] = useState(false);
   const demoCardRef = useRef(null);
 
-  // Motion pending completion handler for Vantage initial page
+  // Motion pending completion handler for initial page
   useEffect(() => {
     const cardEl = demoCardRef.current;
     const handleAnimationEnd = (e) => {
@@ -36,35 +36,17 @@ function MainAppContent() {
   }, []);
 
   return (
-    <div className="app-viewport-wrapper">
-      {/* PERSISTENT IDENTICAL NAVIGATION BAR ACROSS ALL STATES */}
-      <Header />
-
-      {/* TOP RIGHT MINIMAL COUNTDOWN NUMBERS (10 DOWN TO 0) */}
-      {!showNewUi && (
-        <div className="top-right-minimal-countdown">
-          <CountUp
-            from={10}
-            to={0}
-            direction="down"
-            duration={10}
-            className="minimal-countdown-number"
-            onEnd={() => setShowNewUi(true)}
-          />
-        </div>
-      )}
-
-      {/* MAIN CONTENT AREA */}
-      <AnimatePresence mode="wait">
-        {!showNewUi ? (
-          /* INITIAL VANTAGE HERO SECTION BEFORE COUNTDOWN FINISHES */
-          <motion.main
-            key="vantage-hero-section"
-            initial={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="viewport-hero-container"
-          >
+    <AnimatePresence mode="wait">
+      {!showNewUi ? (
+        /* INITIAL VANTAGE PAGE BEFORE COUNTDOWN FINISHES */
+        <motion.main
+          key="vantage-initial-page"
+          initial={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="viewport"
+        >
+          <section className="screen" id="screen">
             <video
               className="background"
               autoPlay
@@ -80,6 +62,21 @@ function MainAppContent() {
                 type="video/mp4"
               />
             </video>
+
+            {/* IDENTICAL HEADER */}
+            <Header />
+
+            {/* TOP RIGHT MINIMAL COUNTDOWN NUMBERS (10 DOWN TO 0) */}
+            <div className="top-right-minimal-countdown">
+              <CountUp
+                from={10}
+                to={0}
+                direction="down"
+                duration={10}
+                className="minimal-countdown-number"
+                onEnd={() => setShowNewUi(true)}
+              />
+            </div>
 
             <section className="hero">
               <div className="hero-content">
@@ -134,28 +131,29 @@ function MainAppContent() {
                 </button>
               </article>
             </section>
-          </motion.main>
-        ) : (
-          /* NEW HERO CAROUSEL AND CONTENT AFTER COUNTDOWN FINISHES */
-          <motion.div
-            key="anvi-new-hero-and-content"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="anvi-site-wrapper"
-          >
-            <main className="anvi-main-content">
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/contact" element={<Contact />} />
-              </Routes>
-            </main>
-            <Footer />
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
+          </section>
+        </motion.main>
+      ) : (
+        /* AFTER COUNTDOWN FINISHES - HERO CAROUSEL AND CONTENT WITH SAME HEADER */
+        <motion.div
+          key="anvi-new-hero-and-content"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="anvi-site-wrapper"
+        >
+          <Header />
+          <main className="anvi-main-content">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </main>
+          <Footer />
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }
 
