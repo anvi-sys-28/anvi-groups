@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { heroSlides } from '../../data/slidesData';
+
+const SLIDE_DURATION = 7; // 7 seconds per slide
 
 export default function HeroCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -11,24 +13,13 @@ export default function HeroCarousel() {
   const activeSlide = heroSlides[activeIndex];
   const inactiveSlides = heroSlides.filter((_, idx) => idx !== activeIndex);
 
-  // Autoplay functionality (7 seconds)
-  useEffect(() => {
-    if (isPaused) return;
-
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % heroSlides.length);
-    }, 7000);
-
-    return () => clearInterval(interval);
-  }, [isPaused]);
-
   // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'ArrowLeft') {
-        setActiveIndex((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
+        handlePrev();
       } else if (e.key === 'ArrowRight') {
-        setActiveIndex((prev) => (prev + 1) % heroSlides.length);
+        handleNext();
       }
     };
 
@@ -137,14 +128,23 @@ export default function HeroCarousel() {
             ))}
           </div>
 
-          {/* CONTROLS BELOW CARDS ON BOTTOM RIGHT */}
+          {/* CONTROLS BELOW CARDS - LIVE FILLING PROGRESS LINE */}
           <div className="bottom-right-controls">
             <div className="hero-progress-line-track">
               <motion.div
+                key={activeIndex}
                 className="hero-progress-line-fill"
-                initial={{ width: 0 }}
-                animate={{ width: `${((activeIndex + 1) / heroSlides.length) * 100}%` }}
-                transition={{ duration: 0.4, ease: 'easeOut' }}
+                initial={{ width: '0%' }}
+                animate={{ width: isPaused ? '0%' : '100%' }}
+                transition={{
+                  duration: SLIDE_DURATION,
+                  ease: 'linear'
+                }}
+                onAnimationComplete={() => {
+                  if (!isPaused) {
+                    handleNext();
+                  }
+                }}
               />
             </div>
             <div className="hero-arrow-btns">
