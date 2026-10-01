@@ -51,7 +51,6 @@ export default function HeroCarousel() {
     }
   };
 
-  // Touch handlers for mobile swipe
   const handleTouchStart = (e) => {
     touchStartX.current = e.touches[0].clientX;
   };
@@ -92,7 +91,7 @@ export default function HeroCarousel() {
           </motion.div>
         </AnimatePresence>
 
-        {/* HERO TEXT OVERLAY */}
+        {/* HERO TEXT OVERLAY (BOTTOM LEFT) */}
         <div className="hero-text-content">
           <AnimatePresence mode="wait">
             <motion.div
@@ -103,98 +102,69 @@ export default function HeroCarousel() {
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               className="hero-text-inner"
             >
-              <div className="hero-tag-badge">
-                <span>{activeSlide.subtitle}</span>
-                <span className="dot">•</span>
-                <span>{activeSlide.tag}</span>
-              </div>
               <h1 className="hero-heading">{activeSlide.title}</h1>
+              <p className="hero-tags">#{activeSlide.subtitle.replace(/\s+/g, '')} #{activeSlide.tag.replace(/\s+/g, '')}</p>
               <p className="hero-description">{activeSlide.description}</p>
-              <button className="hero-cta-btn">
+              <button className="hero-cta-outline-btn">
                 <span>{activeSlide.cta}</span>
-                <ArrowRight size={16} />
               </button>
             </motion.div>
           </AnimatePresence>
         </div>
 
-        {/* PREVIEW CARDS - DESKTOP SIDE STACK */}
-        <div className="desktop-preview-stack">
-          {inactiveSlides.map((slide, idx) => (
-            <motion.button
-              key={slide.id}
-              layoutId={`preview-card-${slide.id}`}
-              onClick={() => handleSelectSlide(slide.id)}
-              className="preview-card-item"
-              initial={{ opacity: 0.8, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              whileHover={{ scale: 1.04, filter: 'brightness(1.15)' }}
-              whileTap={{ scale: 0.98 }}
-              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              aria-label={`Switch to slide ${slide.title}`}
-            >
-              <img src={slide.image} alt={slide.title} className="preview-card-img" />
-              <div className="preview-card-overlay">
-                <span className="preview-card-subtitle">{slide.subtitle}</span>
-                <span className="preview-card-title">{slide.title}</span>
-              </div>
-            </motion.button>
-          ))}
-        </div>
+        {/* HORIZONTAL PREVIEW CARDS ROW (BOTTOM RIGHT) */}
+        <div className="horizontal-preview-container">
+          <div className="horizontal-preview-row">
+            {inactiveSlides.map((slide) => (
+              <motion.button
+                key={slide.id}
+                layoutId={`preview-card-${slide.id}`}
+                onClick={() => handleSelectSlide(slide.id)}
+                className="horizontal-preview-card"
+                initial={{ opacity: 0.85, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                whileHover={{ scale: 1.04, filter: 'brightness(1.15)' }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                aria-label={`Switch to slide ${slide.title}`}
+              >
+                <img src={slide.image} alt={slide.title} className="portrait-card-img" />
+                <div className="portrait-card-overlay">
+                  <span className="portrait-card-tag">{slide.subtitle}</span>
+                  <span className="portrait-card-title">{slide.title}</span>
+                </div>
+              </motion.button>
+            ))}
+          </div>
 
-        {/* BOTTOM CONTROLS & PROGRESS INDICATOR */}
-        <div className="hero-controls-bar">
-          <div className="hero-progress-group">
-            <span className="slide-counter-current">
-              {String(activeIndex + 1).padStart(2, '0')}
-            </span>
-            <div className="slide-progress-track">
+          {/* CONTROLS BELOW CARDS ON BOTTOM RIGHT */}
+          <div className="bottom-right-controls">
+            <div className="hero-progress-line-track">
               <motion.div
-                className="slide-progress-bar"
+                className="hero-progress-line-fill"
                 initial={{ width: 0 }}
                 animate={{ width: `${((activeIndex + 1) / heroSlides.length) * 100}%` }}
                 transition={{ duration: 0.4, ease: 'easeOut' }}
               />
             </div>
-            <span className="slide-counter-total">
-              {String(heroSlides.length).padStart(2, '0')}
-            </span>
-          </div>
-
-          <div className="hero-arrow-btns">
-            <button
-              onClick={handlePrev}
-              className="hero-arrow-btn"
-              aria-label="Previous slide"
-            >
-              <ChevronLeft size={20} />
-            </button>
-            <button
-              onClick={handleNext}
-              className="hero-arrow-btn"
-              aria-label="Next slide"
-            >
-              <ChevronRight size={20} />
-            </button>
+            <div className="hero-arrow-btns">
+              <button
+                onClick={handlePrev}
+                className="hero-circle-btn"
+                aria-label="Previous slide"
+              >
+                <ChevronLeft size={18} />
+              </button>
+              <button
+                onClick={handleNext}
+                className="hero-circle-btn"
+                aria-label="Next slide"
+              >
+                <ChevronRight size={18} />
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-
-      {/* MOBILE HORIZONTAL SCROLLABLE PREVIEW CARDS */}
-      <div className="mobile-preview-row">
-        {inactiveSlides.map((slide) => (
-          <button
-            key={slide.id}
-            onClick={() => handleSelectSlide(slide.id)}
-            className="mobile-preview-card"
-          >
-            <img src={slide.image} alt={slide.title} />
-            <div className="mobile-preview-info">
-              <span className="m-sub">{slide.subtitle}</span>
-              <span className="m-title">{slide.title}</span>
-            </div>
-          </button>
-        ))}
       </div>
     </div>
   );

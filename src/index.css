@@ -631,7 +631,7 @@ html.motion-pending .demo-card { opacity: 0; transform-origin: 82% 50%; animatio
   display: none;
 }
 
-/* HERO CAROUSEL CENTERPIECE (EXPANDING FOCUS CAROUSEL) */
+/* HERO CAROUSEL CENTERPIECE (EXPANDING FOCUS CAROUSEL - EXACT MATCH TO REFERENCE SCREENSHOT) */
 .hero-carousel-container {
   position: relative;
   width: 100%;
@@ -665,127 +665,133 @@ html.motion-pending .demo-card { opacity: 0; transform-origin: 82% 50%; animatio
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.75) 100%),
-    linear-gradient(90deg, rgba(0,0,0,0.65) 0%, transparent 60%);
+    linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%),
+    linear-gradient(90deg, rgba(0,0,0,0.65) 0%, transparent 65%);
 }
 
 .hero-text-content {
   position: absolute;
   left: clamp(24px, 5vw, 80px);
-  bottom: 80px;
-  max-width: 680px;
+  bottom: 90px;
+  max-width: 600px;
   z-index: 10;
   color: #ffffff;
 }
-
-.hero-tag-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: #00e5ff;
-  margin-bottom: 12px;
-}
-
-.hero-tag-badge .dot { opacity: 0.6; }
 
 .hero-heading {
   font-family: "Reference Display", sans-serif;
-  font-size: clamp(2.4rem, 4.5vw, 4.2rem);
+  font-size: clamp(2.6rem, 4.8vw, 4.5rem);
   font-weight: 700;
   line-height: 1.08;
-  letter-spacing: -1.5px;
-  margin: 0 0 18px 0;
+  letter-spacing: -1px;
+  margin: 0 0 14px 0;
   color: #ffffff;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.hero-tags {
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 16px 0;
+  letter-spacing: 0.2px;
 }
 
 .hero-description {
-  font-size: clamp(1rem, 1.3vw, 1.25rem);
+  font-size: clamp(1rem, 1.25vw, 1.2rem);
   line-height: 1.55;
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(255, 255, 255, 0.85);
   margin-bottom: 28px;
-  max-width: 580px;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+  max-width: 520px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
 }
 
-.hero-cta-btn {
-  background: #ffffff;
-  color: #111827;
-  padding: 14px 28px;
+.hero-cta-outline-btn {
+  background: transparent;
+  color: #ffffff;
+  border: 1.5px solid #ffffff;
+  padding: 12px 28px;
   border-radius: 4px;
   font-weight: 600;
   font-size: 15px;
-  border: none;
   cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  transition: transform 0.2s ease, background 0.2s ease;
+  transition: all 0.2s ease;
 }
 
-.hero-cta-btn:hover {
-  background: #f3f4f6;
-  transform: translateY(-2px);
+.hero-cta-outline-btn:hover {
+  background: #ffffff;
+  color: #000000;
 }
 
-/* DESKTOP PREVIEW STACK */
-.desktop-preview-stack {
+/* HORIZONTAL PREVIEW CARDS ROW AT BOTTOM RIGHT (EXACT MATCH TO REFERENCE SCREENSHOT) */
+.horizontal-preview-container {
   position: absolute;
-  right: clamp(24px, 5vw, 80px);
-  bottom: 80px;
+  right: clamp(24px, 4vw, 60px);
+  bottom: 40px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  align-items: flex-end;
+  gap: 16px;
   z-index: 10;
-  width: clamp(220px, 18vw, 270px);
+  max-width: 65vw;
 }
 
-.preview-card-item {
+.horizontal-preview-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+}
+
+.horizontal-preview-row::-webkit-scrollbar {
+  display: none;
+}
+
+.horizontal-preview-card {
   position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border-radius: 6px;
+  width: clamp(125px, 11vw, 175px);
+  aspect-ratio: 9 / 14;
+  border-radius: 4px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   cursor: pointer;
   background: #000;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
   padding: 0;
+  flex-shrink: 0;
 }
 
-.preview-card-img {
+.portrait-card-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-.preview-card-overlay {
+.portrait-card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 30%, rgba(0,0,0,0.85) 100%);
+  background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.85) 100%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 10px 12px;
+  padding: 12px 10px;
   color: #fff;
   text-align: left;
 }
 
-.preview-card-subtitle {
+.portrait-card-tag {
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
   color: #00e5ff;
 }
 
-.preview-card-title {
-  font-size: 13px;
+.portrait-card-title {
+  font-size: 12px;
   font-weight: 600;
   white-space: nowrap;
   overflow: hidden;
@@ -793,38 +799,25 @@ html.motion-pending .demo-card { opacity: 0; transform-origin: 82% 50%; animatio
   color: #fff;
 }
 
-/* CONTROLS BAR & PROGRESS */
-.hero-controls-bar {
-  position: absolute;
-  bottom: 24px;
-  left: clamp(24px, 5vw, 80px);
-  right: clamp(24px, 5vw, 80px);
+/* CONTROLS BELOW CARDS ON BOTTOM RIGHT */
+.bottom-right-controls {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  z-index: 10;
+  gap: 18px;
+  justify-content: flex-end;
 }
 
-.hero-progress-group {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  color: #fff;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.slide-progress-track {
-  width: 120px;
+.hero-progress-line-track {
+  width: 220px;
   height: 3px;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.25);
   border-radius: 2px;
   overflow: hidden;
 }
 
-.slide-progress-bar {
+.hero-progress-line-fill {
   height: 100%;
-  background: #00e5ff;
+  background: linear-gradient(90deg, #a855f7 0%, #00e5ff 100%);
 }
 
 .hero-arrow-btns {
@@ -832,26 +825,25 @@ html.motion-pending .demo-card { opacity: 0; transform-origin: 82% 50%; animatio
   gap: 10px;
 }
 
-.hero-arrow-btn {
-  width: 40px;
-  height: 40px;
+.hero-circle-btn {
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(0, 0, 0, 0.35);
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  backdrop-filter: blur(4px);
   transition: all 0.2s ease;
 }
 
-.hero-arrow-btn:hover {
-  background: #fff;
-  color: #000;
+.hero-circle-btn:hover {
+  background: #ffffff;
+  color: #000000;
 }
-
-.mobile-preview-row { display: none; }
 
 /* SECTIONS LAYOUT */
 .anvi-main-content {
@@ -1752,61 +1744,22 @@ html.motion-pending .demo-card { opacity: 0; transform-origin: 82% 50%; animatio
     text-decoration: none;
   }
 
-  .desktop-preview-stack { display: none; }
-
-  .mobile-preview-row {
-    display: flex;
-    gap: 12px;
-    position: absolute;
-    bottom: 80px;
-    left: 20px;
-    right: 20px;
-    overflow-x: auto;
-    z-index: 10;
-    padding-bottom: 8px;
+  .horizontal-preview-container {
+    right: 16px;
+    left: 16px;
+    max-width: 100%;
+    align-items: stretch;
+    bottom: 20px;
   }
 
-  .mobile-preview-card {
-    min-width: 160px;
-    aspect-ratio: 16 / 9;
-    border-radius: 6px;
-    overflow: hidden;
-    position: relative;
-    border: 1px solid rgba(255,255,255,0.3);
-    background: #000;
-    padding: 0;
-    text-align: left;
+  .horizontal-preview-card {
+    width: 120px;
   }
-
-  .mobile-preview-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .mobile-preview-info {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, transparent 20%, rgba(0,0,0,0.85) 100%);
-    padding: 8px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-  }
-
-  .m-sub { font-size: 9px; color: #00e5ff; font-weight: 700; }
-  .m-title { font-size: 11px; color: #fff; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
   .hero-text-content {
     left: 20px;
     right: 20px;
-    bottom: 180px;
-  }
-
-  .hero-controls-bar {
-    left: 20px;
-    right: 20px;
-    bottom: 20px;
+    bottom: 260px;
   }
 
   .businesses-grid { grid-template-columns: 1fr; }
