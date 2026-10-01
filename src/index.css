@@ -38,10 +38,10 @@ html, body {
   color-scheme: dark light;
 }
 
-/* TOP-RIGHT MINIMAL COUNTDOWN - JUST BOLD NUMBER */
+/* TOP-RIGHT MINIMAL COUNTDOWN - BOLD NUMBERS (10 DOWN TO 0) */
 .top-right-minimal-countdown {
   position: fixed;
-  top: 32px;
+  top: 90px;
   right: 48px;
   z-index: 9999;
   display: flex;
@@ -53,11 +53,11 @@ html, body {
 .minimal-countdown-number {
   font-family: "Reference Display", "Reference Sans", system-ui, sans-serif;
   font-weight: 800;
-  font-size: clamp(54px, 6vw, 84px);
+  font-size: 32px;
   color: #ffffff;
   line-height: 1;
-  letter-spacing: -1.5px;
-  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.7);
+  letter-spacing: -0.5px;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.8);
 }
 
 /* VANTAGE VIEWPORT LANDING STYLING */

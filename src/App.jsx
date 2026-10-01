@@ -40,14 +40,14 @@ function MainAppContent() {
       {/* PERSISTENT IDENTICAL NAVIGATION BAR ACROSS ALL STATES */}
       <Header />
 
-      {/* TOP RIGHT MINIMAL COUNTDOWN NUMBERS (5 DOWN TO 0) */}
+      {/* TOP RIGHT MINIMAL COUNTDOWN NUMBERS (10 DOWN TO 0) */}
       {!showNewUi && (
         <div className="top-right-minimal-countdown">
           <CountUp
-            from={5}
+            from={10}
             to={0}
             direction="down"
-            duration={5}
+            duration={10}
             className="minimal-countdown-number"
             onEnd={() => setShowNewUi(true)}
           />
