@@ -135,8 +135,9 @@ html, body {
 
 .brand {
   position: relative;
-  top: 10px;
-  display: inline-block;
+  top: 6px;
+  display: flex;
+  align-items: center;
   text-decoration: none;
   filter: drop-shadow(0 1px 2px rgba(0,0,0,.3));
 }
@@ -147,13 +148,12 @@ html, body {
   height: 25px;
 }
 
-.brand-icon-img {
+.brand-logo-img {
   display: block;
-  width: 32px;
-  height: 32px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  height: clamp(28px, 3.5vh, 34px);
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
 }
 
 .header-actions {

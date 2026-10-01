@@ -48,7 +48,7 @@ export default function Header() {
         <img
           src="/assets/l.webp"
           alt="ANVI GROUPS Logo"
-          className="brand-icon-img"
+          className="brand-logo-img"
         />
       </Link>
 
