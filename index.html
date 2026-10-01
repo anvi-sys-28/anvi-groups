@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stop Digging Through Dashboards</title>
+    <meta name="theme-color" content="#000000" />
+    <meta name="color-scheme" content="dark" />
+    <script>
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('motion-pending');
+        window.__motionTimeout = setTimeout(function() {
+          document.documentElement.classList.remove('motion-pending');
+        }, 3500);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
