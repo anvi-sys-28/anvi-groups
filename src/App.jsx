@@ -89,26 +89,16 @@ export default function App() {
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             className="viewport"
           >
-            {/* TOP RIGHT COUNTDOWN BADGE FROM REACT BITS */}
-            <div className="top-right-countdown-badge">
-              <span className="badge-pulse" />
-              <span className="badge-text">Next Gen ANVI UI in</span>
+            {/* TOP RIGHT MINIMAL COUNTDOWN - BOLD NUMBERS ONLY */}
+            <div className="top-right-minimal-countdown">
               <CountUp
                 from={5}
                 to={0}
                 direction="down"
                 duration={5}
-                className="countdown-number"
+                className="minimal-countdown-number"
                 onEnd={() => setShowNewUi(true)}
               />
-              <span className="badge-sec">s</span>
-              <button
-                onClick={() => setShowNewUi(true)}
-                className="skip-badge-btn"
-                title="Switch directly to new UI"
-              >
-                Skip ➔
-              </button>
             </div>
 
             <section className="screen" id="screen">
