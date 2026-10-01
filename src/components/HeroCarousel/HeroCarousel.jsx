@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { heroSlides } from '../../data/slidesData';
 
-const SLIDE_DURATION = 8; // 8 seconds per slide for relaxed viewing
+const SLIDE_DURATION = 8; // 8 seconds per slide
 
 export default function HeroCarousel() {
   // Store ordered list of slide IDs [active, next1, next2, next3]
@@ -84,6 +84,10 @@ export default function HeroCarousel() {
           >
             <img
               src={activeSlide.image}
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = `/${activeSlide.id}.webp`;
+              }}
               alt={activeSlide.title}
               className="active-hero-image"
             />
@@ -131,7 +135,15 @@ export default function HeroCarousel() {
                 transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
                 aria-label={`Switch to ${slide.title}`}
               >
-                <img src={slide.image} alt={slide.title} className="portrait-card-img" />
+                <img
+                  src={slide.image}
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = `/${slide.id}.webp`;
+                  }}
+                  alt={slide.title}
+                  className="portrait-card-img"
+                />
                 <div className="portrait-card-overlay">
                   {slide.tag === 'Coming Soon' && (
                     <span className="coming-soon-badge">COMING SOON</span>
