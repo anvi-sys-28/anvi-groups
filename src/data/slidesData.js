@@ -9,6 +9,15 @@ export const heroSlides = [
     tag: "Software Solutions"
   },
   {
+    id: 'im',
+    title: "Global Trade & Export Logistics",
+    subtitle: "ANVI EXPORTS",
+    description: "Worldwide trade operations, high-quality commodity exports, and integrated global supply chain distribution networks.",
+    cta: "Explore Global Exports",
+    image: "/assets/im.webp",
+    tag: "Global Trade"
+  },
+  {
     id: 'i',
     title: "Luxury Interior & Architectural Design",
     subtitle: "ANVI INTERIORS",
@@ -25,15 +34,6 @@ export const heroSlides = [
     cta: "Coming Soon",
     image: "/assets/b.webp",
     tag: "Coming Soon"
-  },
-  {
-    id: 'im',
-    title: "Global Trade & Export Logistics",
-    subtitle: "ANVI EXPORTS",
-    description: "Worldwide trade operations, high-quality commodity exports, and integrated global supply chain distribution networks.",
-    cta: "Explore Global Exports",
-    image: "/assets/im.webp",
-    tag: "Global Trade"
   }
 ];
 
@@ -45,6 +45,14 @@ export const businessVerticals = [
     description: 'Enterprise AI, cloud engineering, next-gen software, and data infrastructure driving global digital transformation.',
     image: '/assets/s.webp',
     stats: 'ANVITECH INDIA PVT, LTD.'
+  },
+  {
+    id: 'im',
+    title: 'Exports & Trade Logistics',
+    subtitle: 'ANVI EXPORTS',
+    description: 'International commodity trading, end-to-end freight logistics, and global market distribution.',
+    image: '/assets/im.webp',
+    stats: '25+ Global Destination Markets'
   },
   {
     id: 'i',
@@ -61,14 +69,6 @@ export const businessVerticals = [
     description: 'Next-generation advertising solutions, digital brand media, and high-conversion market campaigns.',
     image: '/assets/b.webp',
     stats: 'Coming Soon'
-  },
-  {
-    id: 'im',
-    title: 'Exports',
-    subtitle: 'ANVI EXPORTS',
-    description: 'International commodity trading, end-to-end freight logistics, and global market distribution.',
-    image: '/assets/im.webp',
-    stats: '25+ Global Destination Markets'
   }
 ];
 
