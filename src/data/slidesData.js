@@ -1,99 +1,74 @@
 export const heroSlides = [
   {
-    id: 1,
-    title: "Building What Moves Tomorrow",
-    subtitle: "ANVI GROUPS",
-    description: "Building businesses, technology and solutions that create lasting value for generations to come.",
-    cta: "Explore ANVI GROUPS",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=85",
-    tag: "Corporate Vision"
+    id: 's',
+    title: "Software Development & Next-Gen Tech",
+    subtitle: "ANVITECH INDIA PVT, LTD.",
+    description: "Cutting-edge enterprise software platforms, cloud engineering, and intelligent digital systems built by ANVITECH INDIA PVT, LTD.",
+    cta: "Explore Software Services",
+    image: "/assets/s.webp",
+    tag: "Software Solutions"
   },
   {
-    id: 2,
-    title: "Technology That Creates Possibility",
-    subtitle: "ANVI TECHNOLOGIES",
-    description: "Digital platforms and technology solutions built for a connected, intelligent future.",
-    cta: "Explore Tech Solutions",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2000&q=85",
-    tag: "Digital Ecosystem"
+    id: 'i',
+    title: "Luxury Interior & Architectural Design",
+    subtitle: "ANVI INTERIORS",
+    description: "Bespoke interior architecture, commercial spatial design, and premium workplace environment transformations.",
+    cta: "Discover Interior Design",
+    image: "/assets/i.webp",
+    tag: "Interior Architecture"
   },
   {
-    id: 3,
-    title: "Infrastructure for a Growing World",
-    subtitle: "ANVI INFRA",
-    description: "Creating scalable infrastructure designed around tomorrow's global industrial and urban needs.",
-    cta: "Discover Infrastructure",
-    image: "https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&w=2000&q=85",
-    tag: "Sustainable Infra"
+    id: 'b',
+    title: "Advertising & Brand Media",
+    subtitle: "ANVI ADVERTISING",
+    description: "High-impact brand strategy, creative media campaigns, and digital advertising ecosystems. Launching soon.",
+    cta: "Coming Soon",
+    image: "/assets/b.webp",
+    tag: "Coming Soon"
   },
   {
-    id: 4,
-    title: "Innovation Across Industries",
-    subtitle: "ANVI VENTURES",
-    description: "Building and supporting high-impact businesses across high-growth emerging opportunities.",
-    cta: "Explore Ventures",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2000&q=85",
-    tag: "Strategic Investments"
-  },
-  {
-    id: 5,
-    title: "Growing Responsibly",
-    subtitle: "ANVI GROUPS",
-    description: "Creating long-term value through responsible growth, clean transition, and corporate stewardship.",
-    cta: "Learn About Sustainability",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2000&q=85",
-    tag: "ESG & Value Creation"
+    id: 'im',
+    title: "Global Trade & Export Logistics",
+    subtitle: "ANVI EXPORTS",
+    description: "Worldwide trade operations, high-quality commodity exports, and integrated global supply chain distribution networks.",
+    cta: "Explore Global Exports",
+    image: "/assets/im.webp",
+    tag: "Global Trade"
   }
 ];
 
 export const businessVerticals = [
   {
-    id: 'tech',
-    title: 'Technology',
-    subtitle: 'ANVI Technologies',
-    description: 'Enterprise AI, cloud platforms, next-gen software, and data infrastructure driving global enterprise transformation.',
-    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80',
-    stats: '150+ Enterprise Clients'
+    id: 's',
+    title: 'Software Development',
+    subtitle: 'ANVITECH INDIA PVT, LTD.',
+    description: 'Enterprise AI, cloud engineering, next-gen software, and data infrastructure driving global digital transformation.',
+    image: '/assets/s.webp',
+    stats: 'ANVITECH INDIA PVT, LTD.'
   },
   {
-    id: 'infra',
-    title: 'Infrastructure',
-    subtitle: 'ANVI Infra',
-    description: 'Large-scale industrial parks, smart logistics hubs, and modern transport networks powering economic progress.',
-    image: 'https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&w=800&q=80',
-    stats: '12M+ Sq. Ft. Developed'
+    id: 'i',
+    title: 'Interiors',
+    subtitle: 'ANVI INTERIORS',
+    description: 'Bespoke corporate architecture, commercial workspace design, and luxury interior transformations.',
+    image: '/assets/i.webp',
+    stats: '500+ Completed Spaces'
   },
   {
-    id: 'digital',
-    title: 'Digital Solutions',
-    subtitle: 'ANVI Digital',
-    description: 'End-to-end digital transformation, cyber resilience, analytics, and intelligent automation systems.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
-    stats: '99.99% Reliability Record'
+    id: 'b',
+    title: 'Advertising',
+    subtitle: 'ANVI ADVERTISING (Coming Soon)',
+    description: 'Next-generation advertising solutions, digital brand media, and high-conversion market campaigns.',
+    image: '/assets/b.webp',
+    stats: 'Coming Soon'
   },
   {
-    id: 'services',
-    title: 'Business Services',
-    subtitle: 'ANVI Capital & Advisory',
-    description: 'Strategic advisory, asset management, capital allocation, and corporate growth services.',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
-    stats: '$2.5B+ Assets Under Management'
-  },
-  {
-    id: 'innovation',
-    title: 'Innovation',
-    subtitle: 'ANVI Labs',
-    description: 'Applied research, quantum computing initiatives, green tech accelerators, and material science R&D.',
-    image: 'https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&w=800&q=80',
-    stats: '45+ Global Patents'
-  },
-  {
-    id: 'ventures',
-    title: 'Emerging Ventures',
-    subtitle: 'ANVI Capital Ventures',
-    description: 'Early and growth stage venture capital backing founders solving hard engineering and economic problems.',
-    image: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=800&q=80',
-    stats: '30+ Portfolio Companies'
+    id: 'im',
+    title: 'Exports',
+    subtitle: 'ANVI EXPORTS',
+    description: 'International commodity trading, end-to-end freight logistics, and global market distribution.',
+    image: '/assets/im.webp',
+    stats: '25+ Global Destination Markets'
   }
 ];
 

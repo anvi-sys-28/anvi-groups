@@ -3,10 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { heroSlides } from '../../data/slidesData';
 
-const SLIDE_DURATION = 7; // 7 seconds per slide
+const SLIDE_DURATION = 8; // 8 seconds per slide for relaxed viewing
 
 export default function HeroCarousel() {
-  // Store ordered list of slide IDs [active, next1, next2, next3, next4]
+  // Store ordered list of slide IDs [active, next1, next2, next3]
   const [slideOrder, setSlideOrder] = useState(heroSlides.map((s) => s.id));
   const [isPaused, setIsPaused] = useState(false);
   const touchStartX = useRef(0);
@@ -15,7 +15,7 @@ export default function HeroCarousel() {
   const activeId = slideOrder[0];
   const activeSlide = heroSlides.find((s) => s.id === activeId);
 
-  // Queue slides are remaining 4 slides in order array
+  // Queue slides are remaining slides in order array
   const queueSlides = slideOrder.slice(1).map((id) => heroSlides.find((s) => s.id === id));
 
   // Advance to next slide in queue loop
@@ -76,10 +76,10 @@ export default function HeroCarousel() {
           <motion.div
             key={activeSlide.id}
             layoutId={`slide-media-${activeSlide.id}`}
-            initial={{ opacity: 0.6, scale: 1.04 }}
+            initial={{ opacity: 0.5, scale: 1.05 }}
             animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.96 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
             className="active-hero-image-wrapper"
           >
             <img
@@ -96,16 +96,16 @@ export default function HeroCarousel() {
           <AnimatePresence mode="wait">
             <motion.div
               key={activeSlide.id}
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 28 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -16 }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
               className="hero-text-inner"
             >
+              <div className="hero-subtitle-badge">
+                <span>{activeSlide.subtitle}</span>
+              </div>
               <h1 className="hero-heading">{activeSlide.title}</h1>
-              <p className="hero-tags">
-                #{activeSlide.subtitle.replace(/\s+/g, '')} #{activeSlide.tag.replace(/\s+/g, '')}
-              </p>
               <p className="hero-description">{activeSlide.description}</p>
               <button className="hero-cta-outline-btn">
                 <span>{activeSlide.cta}</span>
@@ -124,16 +124,21 @@ export default function HeroCarousel() {
                 layoutId={`slide-media-${slide.id}`}
                 onClick={() => handleSelectSlide(slide.id)}
                 className={`horizontal-preview-card ${index === 0 ? 'front-card' : ''}`}
-                initial={{ opacity: 0.8, y: 20 }}
+                initial={{ opacity: 0.85, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 whileHover={{ scale: 1.06, filter: 'brightness(1.15)' }}
                 whileTap={{ scale: 0.98 }}
-                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
                 aria-label={`Switch to ${slide.title}`}
               >
                 <img src={slide.image} alt={slide.title} className="portrait-card-img" />
                 <div className="portrait-card-overlay">
-                  {index === 0 && <span className="front-card-badge">NEXT</span>}
+                  {slide.tag === 'Coming Soon' && (
+                    <span className="coming-soon-badge">COMING SOON</span>
+                  )}
+                  {index === 0 && slide.tag !== 'Coming Soon' && (
+                    <span className="front-card-badge">NEXT</span>
+                  )}
                   <span className="portrait-card-tag">{slide.subtitle}</span>
                   <span className="portrait-card-title">{slide.title}</span>
                 </div>
@@ -141,7 +146,7 @@ export default function HeroCarousel() {
             ))}
           </div>
 
-          {/* CONTROLS & CONTINUOUS FILLING PROGRESS LINE */}
+          {/* CONTROLS & CONTINUOUS PURE WHITE FILLING PROGRESS LINE */}
           <div className="bottom-right-controls">
             <div className="hero-progress-line-track">
               <motion.div
