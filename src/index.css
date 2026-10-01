@@ -590,14 +590,14 @@ html.motion-pending .demo-card { opacity: 0; transform-origin: 82% 50%; animatio
 }
 
 .horizontal-preview-card.front-card {
-  border: 1.5px solid #00e5ff;
-  box-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
+  border: 1.5px solid #ff6b00;
+  box-shadow: 0 0 22px rgba(255, 107, 0, 0.45);
 }
 
 .front-card-badge {
   align-self: flex-start;
-  background: #00e5ff;
-  color: #000000;
+  background: #ff6b00;
+  color: #ffffff;
   font-size: 9px;
   font-weight: 800;
   padding: 2px 6px;
@@ -630,7 +630,7 @@ html.motion-pending .demo-card { opacity: 0; transform-origin: 82% 50%; animatio
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  color: #00e5ff;
+  color: #ff6b00;
 }
 
 .portrait-card-title {

@@ -3,9 +3,33 @@ import { Link, useLocation } from 'react-router-dom';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [currentTime, setCurrentTime] = useState(new Date());
   const location = useLocation();
   const navRef = useRef(null);
   const toggleRef = useRef(null);
+
+  // Live real-time clock updater
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  // Format live time string e.g. "9:19 AM"
+  const formattedTime = currentTime.toLocaleTimeString('en-US', {
+    hour: 'numeric',
+    minute: '2-digit',
+    hour12: true
+  });
+
+  // Format live date string e.g. "1 Oct 2026"
+  const formattedDate = currentTime.toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric'
+  });
 
   // Close menu on route change
   useEffect(() => {
@@ -85,12 +109,11 @@ export default function Header() {
           </Link>
         </nav>
 
+        {/* DYNAMIC LIVE REAL-TIME DATE AND TIME */}
         <div className="time-panel">
           <label>Timezone</label>
-          <span>9:47 PM&nbsp; • &nbsp;14 July 2026</span>
+          <span>{formattedTime}&nbsp; • &nbsp;{formattedDate}</span>
         </div>
-
-        <button className="sign-up">Sign Up</button>
       </div>
 
       <button
