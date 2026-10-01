@@ -44,28 +44,12 @@ export default function Header() {
 
   return (
     <header className={`header ${menuOpen ? 'menu-open' : ''}`}>
-      <Link to="/" className="brand" aria-label="Vantage home">
-        <svg
-          width="25"
-          height="25"
-          viewBox="0 0 25 25"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="brand-icon"
-        >
-          <g clipPath="url(#vantage-header-clip)">
-            <rect width="25" height="25" fill="#ededed" />
-            <path d="M 12.5,2 L 23,12.5 L 12.5,23 L 2,12.5 Z" fill="#050606" />
-            <path d="M 12.5,2 L 23,12.5 L 12.5,12.5 Z" fill="#737778" />
-            <path d="M 12.5,12.5 L 23,12.5 L 12.5,23 Z" fill="#fafafa" />
-            <path d="M 2,12.5 L 12.5,12.5 L 12.5,23 Z" fill="#0a0b0b" />
-          </g>
-          <defs>
-            <clipPath id="vantage-header-clip">
-              <circle cx="12.5" cy="12.5" r="12.5" />
-            </clipPath>
-          </defs>
-        </svg>
+      <Link to="/" className="brand" aria-label="ANVI GROUPS home">
+        <img
+          src="/assets/l.webp"
+          alt="ANVI GROUPS Logo"
+          className="brand-icon-img"
+        />
       </Link>
 
       <div

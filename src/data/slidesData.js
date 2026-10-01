@@ -12,10 +12,10 @@ export const heroSlides = [
     id: 'i',
     title: "Luxury Interior & Architectural Design",
     subtitle: "ANVI INTERIORS",
-    description: "Bespoke interior architecture, commercial spatial design, and premium workplace environment transformations.",
-    cta: "Discover Interior Design",
+    description: "Bespoke interior architecture, commercial spatial design, and premium workplace environment transformations. Launching soon.",
+    cta: "Coming Soon",
     image: "/assets/i.webp",
-    tag: "Interior Architecture"
+    tag: "Coming Soon"
   },
   {
     id: 'b',
@@ -49,10 +49,10 @@ export const businessVerticals = [
   {
     id: 'i',
     title: 'Interiors',
-    subtitle: 'ANVI INTERIORS',
+    subtitle: 'ANVI INTERIORS (Coming Soon)',
     description: 'Bespoke corporate architecture, commercial workspace design, and luxury interior transformations.',
     image: '/assets/i.webp',
-    stats: '500+ Completed Spaces'
+    stats: 'Coming Soon'
   },
   {
     id: 'b',
