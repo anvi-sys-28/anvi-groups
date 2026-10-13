@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ShieldCheck, Zap, Target, TrendingUp } from 'lucide-react';
 import HeroCarousel from '../components/HeroCarousel/HeroCarousel';
+import VelaAboutSection from '../components/VelaAboutSection';
 import SectionHeading from '../components/SectionHeading';
 import BusinessCard from '../components/BusinessCard';
 import { businessVerticals, companyApproach } from '../data/slidesData';
@@ -11,6 +12,9 @@ export default function Home() {
     <div className="anvi-page home-page">
       {/* IMMERSIVE HERO CAROUSEL */}
       <HeroCarousel />
+
+      {/* SECTION: VELA ABOUT SECTION (REAL-TIME DATA INFRASTRUCTURE) */}
+      <VelaAboutSection />
 
       {/* SECTION 1: INTRODUCTION */}
       <section className="section intro-section">

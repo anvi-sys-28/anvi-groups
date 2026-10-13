@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import DemoOne from '@/components/ui/demo';
 
 function MainAppContent() {
   const [showNewUi, setShowNewUi] = useState(false);
@@ -143,6 +144,7 @@ function MainAppContent() {
           className="anvi-site-wrapper"
         >
           <Header />
+          <DemoOne />
           <main className="anvi-main-content">
             <Routes>
               <Route path="/" element={<Home />} />

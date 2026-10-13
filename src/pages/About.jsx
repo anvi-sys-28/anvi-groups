@@ -2,15 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Target, Compass, Award, Users, Globe2, ArrowRight } from 'lucide-react';
 import SectionHeading from '../components/SectionHeading';
+import VelaAboutSection from '../components/VelaAboutSection';
 import { companyApproach } from '../data/slidesData';
 
 export default function About() {
   const leadership = [
     {
-      name: 'Vikram Anvi',
-      title: 'Group Chairman & Managing Director',
+      name: 'Jashwanth Rao Gajvelli & Family',
+      title: 'Founder & Principal Stewardship',
       image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80',
-      bio: 'Pioneered the expansion of ANVI GROUPS into multi-sector technology and infrastructure.'
+      bio: 'Leading ANVI GROUPS with a dedicated mission to serve with quality, help businesses grow globally, and empower enterprises to go digital with great software solutions.'
     },
     {
       name: 'Dr. Elena Rostova',
@@ -34,14 +35,30 @@ export default function About() {
           <span className="page-hero-tag">ABOUT ANVI GROUPS</span>
           <h1 className="page-hero-title">Building Businesses With A Long-Term Perspective.</h1>
           <p className="page-hero-lead">
-            ANVI GROUPS is an enterprise conglomerate driving value across technology, infrastructure, digital networks, and emerging investments worldwide.
+            Jashwanth Rao Gajvelli and family serve with quality and help businesses grow globally, empowering companies to go digital with great software solutions and reliable enterprise infrastructure.
           </p>
         </div>
       </section>
 
+      {/* VELA REAL-TIME DATA PLATFORM SHOWCASE */}
+      <VelaAboutSection />
+
       {/* WHO WE ARE & HERO IMAGE */}
       <section className="section about-who-section">
         <div className="container">
+          <div className="family-legacy-box">
+            <div className="legacy-icon">
+              <Award size={28} />
+            </div>
+            <div className="legacy-content">
+              <span className="legacy-tag">FAMILY STEWARDSHIP & MISSION</span>
+              <h3>Serving with Quality · Driving Global Growth · Digital Innovation</h3>
+              <p>
+                At ANVI GROUPS, <strong>Jashwanth Rao Gajvelli and family</strong> serve with quality, helping businesses grow globally and empowering enterprises to go digitally with great software solutions. We combine integrity, technological leadership, and long-term vision to build sustainable value for businesses across every continent.
+              </p>
+            </div>
+          </div>
+
           <div className="about-hero-img-container">
             <img
               src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1800&q=85"
