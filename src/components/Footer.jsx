@@ -35,7 +35,8 @@ export default function Footer() {
           ]
         }
       ]}
-      height="580px"
+      crop={-0.1}
+      height="380px"
     />
   );
 }

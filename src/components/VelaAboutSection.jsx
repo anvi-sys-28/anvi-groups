@@ -3,8 +3,19 @@ import './VelaAboutSection.css';
 
 export default function VelaAboutSection() {
   const containerRef = useRef(null);
-  const viewportBoxRef = useRef(null);
-  const [scale, setScale] = useState(1);
+  const [scale, setScale] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const w = window.innerWidth;
+      return w < 700 ? 1 : Math.min(w / 1690, 1);
+    }
+    return 1;
+  });
+  const [isMobile, setIsMobile] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return window.innerWidth < 700;
+    }
+    return false;
+  });
   const [telemetry, setTelemetry] = useState({
     latency: '41',
     error: '0.00',
@@ -30,8 +41,10 @@ export default function VelaAboutSection() {
       if (!containerRef.current) return;
       const width = containerRef.current.clientWidth;
       if (width < 700) {
+        setIsMobile(true);
         setScale(1);
       } else {
+        setIsMobile(false);
         const calculated = Math.min(width / 1690, 1);
         setScale(calculated);
       }
@@ -75,27 +88,35 @@ export default function VelaAboutSection() {
     };
   }, []);
 
+  const scaledHeight = isMobile ? undefined : Math.round(950 * scale);
+
   return (
     <section className="vela-section-container" ref={containerRef}>
       <div
-        className="vela-viewport-box"
-        ref={viewportBoxRef}
+        className="vela-scaler"
         style={{
-          transform: scale < 1 && window.innerWidth >= 700 ? `scale(${scale})` : undefined,
-          marginBottom: scale < 1 && window.innerWidth >= 700 ? `-${(1 - scale) * 950}px` : undefined
+          height: scaledHeight ? `${scaledHeight}px` : 'auto'
         }}
       >
-        <div className="vela-canvas">
-          <main className="vela-shell" aria-labelledby="vela-page-title">
+        <div
+          className="vela-viewport-box"
+          style={{
+            transform: !isMobile ? `scale(${scale})` : undefined
+          }}
+        >
+          <div className="vela-canvas">
+            <main className="vela-shell" aria-labelledby="vela-page-title">
             <header className="vela-nav">
-              <div className="vela-brand" aria-label="Vela home">
+              <div className="vela-brand" aria-label="ANVI GROUPS">
                 <span className="vela-brand-mark" aria-hidden="true"></span>
-                <span>Vela</span>
+                <span>ANVI GROUPS</span>
               </div>
               <nav className="vela-nav-links" aria-label="Primary navigation">
-                <span>Platform</span>
+                <span>Software</span>
                 <span aria-hidden="true">·</span>
-                <span>Features</span>
+                <span>Exports</span>
+                <span aria-hidden="true">·</span>
+                <span>Enterprises</span>
               </nav>
             </header>
 
@@ -105,14 +126,13 @@ export default function VelaAboutSection() {
                 <span className="vela-headline-serif">moves like light.</span>
               </h1>
               <p>
-                The real-time data platform for teams that can’t wait — ingest, transform, and
-                <br className="vela-desktop-break" /> act on live signals with latency you can feel.
+                Built by ANVI GROUPS to accelerate business growth globally. Jashwanth Rao Gajvelli and family serve with quality — delivering next-generation software development, global export logistics, and high-impact digital solutions.
               </p>
             </section>
 
             <section className="vela-cards" aria-label="Platform features">
-              {/* CARD 1: Planetary-scale streaming */}
-              <article className="vela-card vela-card-left" tabIndex={0} aria-label="Planetary-scale streaming">
+              {/* CARD 1: Global Trade & Export Logistics */}
+              <article className="vela-card vela-card-left" tabIndex={0} aria-label="Global Trade & Export Logistics">
                 <div className="vela-left-surface" aria-hidden="true"></div>
                 <svg className="vela-card-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true">
                   <circle cx="16" cy="16" r="12" stroke="currentColor" strokeWidth="2.25" />
@@ -122,23 +142,23 @@ export default function VelaAboutSection() {
                     strokeWidth="2.05"
                   />
                 </svg>
-                <span className="vela-glass-pill vela-region-left">us-east-1</span>
-                <span className="vela-glass-pill vela-region-right">eu-west-2</span>
+                <span className="vela-glass-pill vela-region-left">Asia-Pacific</span>
+                <span className="vela-glass-pill vela-region-right">Global Markets</span>
                 <span className="vela-glass-pill vela-live">
                   <i className="vela-dot"></i>
-                  <span className="vela-live-copy">Streaming live</span>
+                  <span className="vela-live-copy">Active Trade</span>
                 </span>
-                <span className="vela-glass-pill vela-regions">+28 regions</span>
+                <span className="vela-glass-pill vela-regions">25+ Export Markets</span>
                 <h2 className="vela-card-title">
-                  The real-time engine for <strong>planetary-scale data.</strong>
+                  ANVI EXPORTS: Global supply chains for <strong>worldwide commerce.</strong>
                 </h2>
               </article>
 
-              {/* CARD 2: Real-time observability */}
+              {/* CARD 2: Software Development & Next-Gen Cloud */}
               <article
                 className="vela-card vela-card-middle"
                 tabIndex={0}
-                aria-label="Real-time observability"
+                aria-label="Software Development & Next-Gen Tech"
                 onPointerEnter={startTelemetry}
                 onPointerLeave={stopTelemetry}
                 onFocus={startTelemetry}
@@ -148,7 +168,7 @@ export default function VelaAboutSection() {
                   <path d="M2 13S7.8 4 17 4s15 9 15 9-5.8 9-15 9S2 13 2 13Z" stroke="currentColor" strokeWidth="2.1" />
                   <circle cx="17" cy="13" r="4.2" stroke="currentColor" strokeWidth="2.1" />
                 </svg>
-                <span className="vela-card-site">vela.io</span>
+                <span className="vela-card-site">anvitech.in</span>
                 <div className="vela-orbit" aria-hidden="true">
                   <div className="vela-orbit-dot-bottom"></div>
                 </div>
@@ -165,11 +185,11 @@ export default function VelaAboutSection() {
                   <i className="vela-dot violet"></i>
                   <span className="vela-telemetry-number" data-baseline="128">{telemetry.requests}</span>&nbsp; k req/s
                 </span>
-                <p className="vela-card-copy">Real-time observability across every service you run.</p>
+                <p className="vela-card-copy">ANVITECH: Enterprise software solutions, custom AI systems & cloud platforms.</p>
               </article>
 
-              {/* CARD 3: Adaptive model operations */}
-              <article className="vela-card vela-card-right" tabIndex={0} aria-label="Adaptive model operations">
+              {/* CARD 3: Interiors & Brand Advertising */}
+              <article className="vela-card vela-card-right" tabIndex={0} aria-label="Interiors & Brand Media">
                 <svg className="vela-card-icon vela-pulse" viewBox="0 0 39 29" fill="none" aria-hidden="true">
                   <path
                     d="M1.5 16h8l4.2-11 7.1 23 5.4-17 3.1 5h8.2"
@@ -183,20 +203,21 @@ export default function VelaAboutSection() {
                 <div className="vela-status-stack">
                   <div className="vela-status">
                     <i className="vela-dot yellow"></i>
-                    <span>Retraining model</span>
-                    <em>working</em>
+                    <span>ANVI Interiors</span>
+                    <em>spatial design</em>
                   </div>
                   <div className="vela-status">
                     <i className="vela-dot"></i>
-                    <span>Anomaly guard</span>
-                    <em>done</em>
+                    <span>ANVI Advertising</span>
+                    <em>brand media</em>
                   </div>
                 </div>
-                <h2 className="vela-card-title">Adaptive.</h2>
+                <h2 className="vela-card-title">Visionary.</h2>
               </article>
             </section>
           </main>
         </div>
+      </div>
       </div>
     </section>
   );

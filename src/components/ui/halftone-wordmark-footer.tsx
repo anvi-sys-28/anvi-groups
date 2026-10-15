@@ -189,13 +189,13 @@ export default function HalftoneWordmarkFooter({
   palette,
   dotGap = 6,
   radius = 80,
-  crop = 0.2,
+  crop = -0.1,
   grain = 0.5,
   interactive = true,
   fontFamily = SANS_STACK,
   fontWeight = 800,
   monoFamily = MONO_STACK,
-  height = "560px",
+  height = "380px",
   className = "",
 }: HalftoneWordmarkFooterProps) {
   const colors = { ...(PRESETS[preset] || PRESETS.night), ...(palette || {}) }
@@ -251,7 +251,7 @@ export default function HalftoneWordmarkFooter({
       m.font = o.fontWeight + " " + fit + "px " + o.fontFamily
       const box = m.measureText(word)
       const cap = box.actualBoundingBoxAscent || fit * 0.72
-      const c = Math.max(0, Math.min(0.6, o.crop))
+      const c = Math.max(-0.6, Math.min(0.6, typeof o.crop === "number" ? o.crop : -0.1))
       m.fillStyle = "#000"
       m.textBaseline = "alphabetic"
       m.fillText(word, (w - box.width) / 2, h + cap * c)

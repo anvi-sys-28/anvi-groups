@@ -12,16 +12,25 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 980px;
+}
+
+.vela-scaler {
+  position: relative;
+  width: 100%;
+  max-width: 1690px;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 .vela-viewport-box {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -845px;
   width: 1690px;
   height: 950px;
-  max-width: 100%;
   transform-origin: top center;
-  transition: transform 0.15s ease-out;
+  transition: transform 0.1s ease-out;
 }
 
 .vela-canvas {
@@ -681,10 +690,21 @@
     min-height: auto;
   }
 
+  .vela-scaler {
+    width: 100%;
+    height: auto !important;
+    overflow: visible;
+  }
+
   .vela-viewport-box {
+    position: relative;
+    left: auto;
+    top: auto;
+    margin-left: 0;
     width: 100%;
     height: auto;
     transform: none !important;
+    margin-bottom: 0 !important;
   }
 
   .vela-canvas {

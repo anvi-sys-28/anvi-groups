@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Target, Compass, Award, Users, Globe2, ArrowRight } from 'lucide-react';
 import SectionHeading from '../components/SectionHeading';
-import VelaAboutSection from '../components/VelaAboutSection';
 import { companyApproach } from '../data/slidesData';
 
 export default function About() {
@@ -39,9 +38,6 @@ export default function About() {
           </p>
         </div>
       </section>
-
-      {/* VELA REAL-TIME DATA PLATFORM SHOWCASE */}
-      <VelaAboutSection />
 
       {/* WHO WE ARE & HERO IMAGE */}
       <section className="section about-who-section">

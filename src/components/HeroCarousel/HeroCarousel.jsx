@@ -111,7 +111,15 @@ export default function HeroCarousel() {
               </div>
               <h1 className="hero-heading">{activeSlide.title}</h1>
               <p className="hero-description">{activeSlide.description}</p>
-              <button className="hero-cta-outline-btn">
+              <button
+                className="hero-cta-outline-btn"
+                onClick={() => {
+                  const nextSection = document.querySelector('.intro-section') || document.querySelector('.vela-section-container');
+                  if (nextSection) {
+                    nextSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
                 <span>{activeSlide.cta}</span>
               </button>
             </motion.div>
