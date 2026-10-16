@@ -101,9 +101,6 @@ export default function Header() {
           >
             About
           </Link>
-          <a href="/#businesses" onClick={() => setMenuOpen(false)}>
-            Services
-          </a>
           <Link
             to="/contact"
             className={location.pathname === '/contact' ? 'active' : ''}

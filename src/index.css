@@ -212,9 +212,6 @@ html, body {
   position: relative;
 }
 
-.nav a:first-child { top: -3px; }
-.nav a:nth-child(4) { margin-left: 1px; }
-
 .nav a.active { color: #fff; }
 .nav a.active::after {
   content: "";
@@ -511,6 +508,16 @@ html.motion-pending .demo-card { opacity: 0; transform-origin: 82% 50%; animatio
   height: 100%;
 }
 
+/* EXPANDING CARD LAYER FOR SMOOTH CINEMATIC TAKEOVER */
+.expanding-card-layer {
+  position: absolute;
+  overflow: hidden;
+  z-index: 5;
+  pointer-events: none;
+  background: #000;
+  will-change: top, left, width, height, border-radius;
+}
+
 .active-hero-image {
   width: 100%;
   height: 100%;
@@ -687,12 +694,37 @@ html.motion-pending .demo-card { opacity: 0; transform-origin: 82% 50%; animatio
   background: rgba(255, 255, 255, 0.25);
   border-radius: 2px;
   overflow: hidden;
+  position: relative;
+}
+
+@keyframes heroTimerProgress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
 .hero-progress-line-fill {
   height: 100%;
   background: #ffffff;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.95);
+  border-radius: 2px;
+  will-change: width;
+}
+
+.hero-progress-line-fill.running {
+  animation: heroTimerProgress 7.5s linear forwards;
+}
+
+.hero-carousel-container:hover .hero-progress-line-fill.running {
+  animation-play-state: paused;
+}
+
+.hero-progress-line-fill.idle {
+  width: 0%;
+  animation: none;
 }
 
 .coming-soon-badge {
@@ -1180,6 +1212,10 @@ html.motion-pending .demo-card { opacity: 0; transform-origin: 82% 50%; animatio
   line-height: 1.55;
   color: #d1d5db;
   max-width: 720px;
+}
+
+.about-page .about-who-section {
+  padding-top: clamp(110px, 12vw, 150px);
 }
 
 .about-hero-full-img {

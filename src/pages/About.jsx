@@ -3,42 +3,103 @@ import { Link } from 'react-router-dom';
 import { Target, Compass, Award, Users, Globe2, ArrowRight } from 'lucide-react';
 import SectionHeading from '../components/SectionHeading';
 import { companyApproach } from '../data/slidesData';
+import DuotoneTeamRoster from '../components/ui/duotone-team-roster';
 
 export default function About() {
-  const leadership = [
+  const executiveMembers = [
     {
       name: 'Jashwanth Rao Gajvelli & Family',
-      title: 'Founder & Principal Stewardship',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80',
-      bio: 'Leading ANVI GROUPS with a dedicated mission to serve with quality, help businesses grow globally, and empower enterprises to go digital with great software solutions.'
+      role: 'Founder & Principal Stewardship',
+      craft: 'Founder',
+      bio: 'Leading ANVI GROUPS with a dedicated mission: serving with quality, helping businesses grow globally, and empowering enterprises to go digital with great software solutions.',
+      photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80',
+      linkLabel: 'Connect',
+      href: '/contact'
     },
     {
       name: 'Dr. Elena Rostova',
-      title: 'Chief Technology Officer',
-      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80',
-      bio: 'Oversees enterprise AI, quantum computing systems, and global digital architectures.'
+      role: 'Chief Technology Officer',
+      craft: 'CTO',
+      bio: 'Oversees enterprise AI architectures, quantum computing systems, and global digital infrastructure.',
+      photo: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80',
+      linkLabel: 'Say hello',
+      href: '/contact'
     },
     {
       name: 'Rajesh K. Mehta',
-      title: 'CEO, ANVI Infra & Energy',
-      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80',
-      bio: 'Drives large-scale urban infrastructure projects and green energy transitions.'
+      role: 'CEO, ANVI Infra & Energy',
+      craft: 'Infra',
+      bio: 'Drives large-scale urban infrastructure projects, green energy grids, and port logistics corridors.',
+      photo: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80',
+      linkLabel: 'Say hello',
+      href: '/contact'
+    },
+    {
+      name: 'Vikramaditya Rao',
+      role: 'Managing Director, Global Exports',
+      craft: 'Exports',
+      bio: 'Directs international supply chains, multimodal shipping logistics, and cross-border commercial compliance.',
+      photo: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=800&q=80',
+      linkLabel: 'Say hello',
+      href: '/contact'
+    },
+    {
+      name: 'Sophia Lin',
+      role: 'VP, Enterprise Software Solutions',
+      craft: 'Software',
+      bio: 'Architects enterprise cloud platforms, workflow automation suites, and custom digital transformation tools.',
+      photo: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=800&q=80',
+      linkLabel: 'Say hello',
+      href: '/contact'
+    },
+    {
+      name: 'Marcus Vance',
+      role: 'Head of Capital Allocation & M&A',
+      craft: 'Capital',
+      bio: 'Steers private equity investments, international strategic acquisitions, and corporate treasury growth.',
+      photo: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=800&q=80',
+      linkLabel: 'Say hello',
+      href: '/contact'
+    },
+    {
+      name: 'Ananya Patel',
+      role: 'Chief ESG & Sustainability Officer',
+      craft: 'ESG',
+      bio: 'Guarantees net-zero carbon benchmarks, renewable energy standards, and transparent stakeholder governance.',
+      photo: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80',
+      linkLabel: 'Say hello',
+      href: '/contact'
+    },
+    {
+      name: 'David Chen',
+      role: 'Chief Operating Officer',
+      craft: 'Operations',
+      bio: 'Oversees operational rigor, capital allocation efficiency, and global standard operational consistency.',
+      photo: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80',
+      linkLabel: 'Say hello',
+      href: '/contact'
+    }
+  ];
+
+  const openRoles = [
+    {
+      title: 'Lead AI Systems Architect',
+      href: '/contact',
+      craft: 'Engineering',
+      note: 'Scale high-throughput neural networks and distributed real-time telemetry systems.',
+      mark: 'You?'
+    },
+    {
+      title: 'VP of Global Business Development',
+      href: '/contact',
+      craft: 'Growth',
+      note: 'Spearhead cross-border enterprise partnerships across EMEA, APAC, and the Americas.',
+      mark: 'Join?'
     }
   ];
 
   return (
     <div className="anvi-page about-page">
-      {/* PAGE HERO */}
-      <section className="page-hero">
-        <div className="container">
-          <span className="page-hero-tag">ABOUT ANVI GROUPS</span>
-          <h1 className="page-hero-title">Building Businesses With A Long-Term Perspective.</h1>
-          <p className="page-hero-lead">
-            Jashwanth Rao Gajvelli and family serve with quality and help businesses grow globally, empowering companies to go digital with great software solutions and reliable enterprise infrastructure.
-          </p>
-        </div>
-      </section>
-
       {/* WHO WE ARE & HERO IMAGE */}
       <section className="section about-who-section">
         <div className="container">
@@ -121,30 +182,20 @@ export default function About() {
         </div>
       </section>
 
-      {/* LEADERSHIP */}
-      <section className="section leadership-section">
-        <div className="container">
-          <SectionHeading
-            subtitle="EXECUTIVE LEADERSHIP"
-            title="Guided by Visionary Stewardship"
-            description="Our executive team combines decades of global leadership across industrial, technology, and financial markets."
-          />
-          <div className="leadership-grid">
-            {leadership.map((person) => (
-              <div key={person.name} className="leader-card">
-                <div className="leader-img-wrapper">
-                  <img src={person.image} alt={person.name} className="leader-img" />
-                </div>
-                <div className="leader-info">
-                  <h4>{person.name}</h4>
-                  <span className="leader-title">{person.title}</span>
-                  <p className="leader-bio">{person.bio}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* DUOTONE EXECUTIVE LEADERSHIP ROSTER */}
+      <DuotoneTeamRoster
+        preset="ember"
+        columns={3}
+        height="800px"
+        eyebrow="EXECUTIVE LEADERSHIP"
+        title={"Guided by\nStewardship"}
+        intro="Our executive team combines decades of global leadership across industrial operations, enterprise software solutions, and international capital markets."
+        members={executiveMembers}
+        openRoles={openRoles}
+        cta={{ label: "Connect with leadership", href: "/contact" }}
+        secondaryCta={{ label: "Career opportunities", href: "/contact" }}
+      />
+
 
       {/* GROWTH & FUTURE CTA */}
       <section className="section about-cta-section">
