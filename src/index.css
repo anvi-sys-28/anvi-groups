@@ -1499,6 +1499,57 @@ html.motion-pending .demo-card { opacity: 0; transform-origin: 82% 50%; animatio
 .map-overlay-card h4 { margin: 0 0 4px 0; font-size: 16px; }
 .map-overlay-card p { margin: 0; font-size: 13px; color: #9ca3af; }
 
+/* GLOBAL FOOTPRINT COUNTRIES GRID */
+.footprint-countries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 36px;
+}
+
+.footprint-country-card {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 24px;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.footprint-country-card:hover {
+  transform: translateY(-3px);
+  border-color: #2563eb;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.country-flag-header {
+  margin-bottom: 6px;
+}
+
+.country-name {
+  font-family: "Reference Display", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: 0.5px;
+}
+
+.country-hub-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #2563eb;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.country-desc {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #4b5563;
+  margin: 0;
+}
+
 /* FOOTER STYLING */
 .anvi-footer {
   background: #0b0f17;

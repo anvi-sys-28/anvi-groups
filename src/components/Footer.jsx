@@ -14,7 +14,6 @@ export default function Footer() {
           links: [
             { label: "Home", href: "/" },
             { label: "About Us", href: "/about" },
-            { label: "Services", href: "/#businesses" },
             { label: "Contact", href: "/contact" }
           ]
         },
@@ -30,8 +29,8 @@ export default function Footer() {
         {
           title: "Connect",
           links: [
-            { label: "info@anvigroups.com", href: "mailto:info@anvigroups.com" },
-            { label: "Global HQ · Hyderabad / London", href: "/contact" }
+            { label: "support@anvigroups.in", href: "mailto:support@anvigroups.in" },
+            { label: "Global HQ · Kapra, Hyderabad, INDIA", href: "/contact" }
           ]
         }
       ]}

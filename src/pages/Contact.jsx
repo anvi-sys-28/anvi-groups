@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, CheckCircle, AlertCircle, Send } from 'lucide-react';
+import { Mail, MapPin, CheckCircle, AlertCircle, Send } from 'lucide-react';
 import SectionHeading from '../components/SectionHeading';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '',
     company: '',
-    subject: 'General Enquiry',
+    subject: 'General Corporate Enquiry',
     message: ''
   });
 
@@ -30,20 +29,18 @@ export default function Contact() {
       return;
     }
 
-    // Success state simulation
+    const emailSubject = `[${formData.subject}] Enquiry from ${formData.name}`;
+    const emailBody = `Hello ANVI GROUPS Team,\n\nName: ${formData.name}\nEmail: ${formData.email}\n${formData.company ? `Company: ${formData.company}\n` : ''}Inquiry Type: ${formData.subject}\n\nMessage:\n${formData.message}\n\nBest regards,\n${formData.name}`;
+
+    const mailtoUrl = `mailto:support@anvigroups.in?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+
     setStatus({
       type: 'success',
-      message: 'Thank you for reaching out to ANVI GROUPS. Our executive team will respond shortly.'
+      message: 'Opening your email client to send your message directly to support@anvigroups.in...'
     });
 
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      company: '',
-      subject: 'General Enquiry',
-      message: ''
-    });
+    // Redirect to mail for support@anvigroups.in
+    window.location.href = mailtoUrl;
   };
 
   return (
@@ -67,7 +64,7 @@ export default function Contact() {
             <div className="contact-info-col">
               <h3 className="contact-info-title">Corporate Headquarters</h3>
               <p className="contact-info-desc">
-                ANVI GROUPS Global Headquarters is located in the financial district, overseeing international operations across 12 countries.
+                ANVI GROUPS Global Headquarters is located in Kapra, Hyderabad, Telangana, INDIA, overseeing international operations and enterprise platforms across India, Italy, Malta, Spain, USA, Canada, and Dubai.
               </p>
 
               <div className="info-cards-list">
@@ -75,7 +72,7 @@ export default function Contact() {
                   <MapPin className="info-icon" size={24} />
                   <div>
                     <strong>Global Headquarters</strong>
-                    <p>ANVI Tower, Level 42, Financial Center Blvd, NY 10005, USA</p>
+                    <p>Kapra, Hyderabad, Telangana, INDIA</p>
                   </div>
                 </div>
 
@@ -83,17 +80,10 @@ export default function Contact() {
                   <Mail className="info-icon" size={24} />
                   <div>
                     <strong>Email Enquiries</strong>
-                    <p>General: info@anvigroups.com</p>
-                    <p>Investor Relations: ir@anvigroups.com</p>
-                  </div>
-                </div>
-
-                <div className="info-card-item">
-                  <Phone className="info-icon" size={24} />
-                  <div>
-                    <strong>Phone Directory</strong>
-                    <p>Main Switchboard: +1 (800) 555-ANVI</p>
-                    <p>Media Desk: +1 (800) 555-0199</p>
+                    <p>Support: <a href="mailto:support@anvigroups.in">support@anvigroups.in</a></p>
+                    <p>Director: <a href="mailto:jashwanth@anvigroups.in">jashwanth@anvigroups.in</a></p>
+                    <p>Managing Director: <a href="mailto:rohan@anvigroups.in">rohan@anvigroups.in</a></p>
+                    <p>Legal Advisor: <a href="mailto:vasavi@anvigroups.in">vasavi@anvigroups.in</a></p>
                   </div>
                 </div>
               </div>
@@ -104,7 +94,7 @@ export default function Contact() {
               <div className="contact-form-card">
                 <h3 className="form-card-title">Send Us a Message</h3>
                 <p className="form-card-subtitle">
-                  Fill out the form below and our corporate relations team will connect with you.
+                  Fill out the form below to send your message directly to support@anvigroups.in.
                 </p>
 
                 {status.message && (
@@ -126,7 +116,7 @@ export default function Contact() {
                         type="text"
                         id="name"
                         name="name"
-                        placeholder="John Doe"
+                        placeholder="Your Name"
                         value={formData.name}
                         onChange={handleChange}
                         required
@@ -138,7 +128,7 @@ export default function Contact() {
                         type="email"
                         id="email"
                         name="email"
-                        placeholder="john@company.com"
+                        placeholder="you@company.com"
                         value={formData.email}
                         onChange={handleChange}
                         required
@@ -148,44 +138,33 @@ export default function Contact() {
 
                   <div className="form-row">
                     <div className="form-group">
-                      <label htmlFor="phone">Phone Number</label>
-                      <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        placeholder="+1 (555) 000-0000"
-                        value={formData.phone}
-                        onChange={handleChange}
-                      />
-                    </div>
-                    <div className="form-group">
                       <label htmlFor="company">Company / Organization</label>
                       <input
                         type="text"
                         id="company"
                         name="company"
-                        placeholder="Acme Corp"
+                        placeholder="Company or Organization"
                         value={formData.company}
                         onChange={handleChange}
                       />
                     </div>
-                  </div>
-
-                  <div className="form-group">
-                    <label htmlFor="subject">Subject / Inquiry Type</label>
-                    <select
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                    >
-                      <option value="General Enquiry">General Corporate Enquiry</option>
-                      <option value="Business Partnership">Business & Partnership</option>
-                      <option value="Technology Solutions">ANVI Technologies Inquiry</option>
-                      <option value="Infrastructure Development">ANVI Infra Development</option>
-                      <option value="Investor Relations">Investor Relations</option>
-                      <option value="Media & Press">Media & Press</option>
-                    </select>
+                    <div className="form-group">
+                      <label htmlFor="subject">Subject / Inquiry Type</label>
+                      <select
+                        id="subject"
+                        name="subject"
+                        value={formData.subject}
+                        onChange={handleChange}
+                      >
+                        <option value="General Corporate Enquiry">General Corporate Enquiry</option>
+                        <option value="Business Partnership">Business & Partnership</option>
+                        <option value="Technology Solutions">ANVI Technologies Inquiry</option>
+                        <option value="Infrastructure Development">ANVI Infra Development</option>
+                        <option value="Trade & Logistics">Global Trade & Logistics</option>
+                        <option value="Investor Relations">Investor Relations</option>
+                        <option value="Media & Press">Media & Press</option>
+                      </select>
+                    </div>
                   </div>
 
                   <div className="form-group">
@@ -202,7 +181,7 @@ export default function Contact() {
                   </div>
 
                   <button type="submit" className="anvi-submit-btn">
-                    <span>Send Enquiry</span>
+                    <span>Send Message to support@anvigroups.in</span>
                     <Send size={16} />
                   </button>
                 </form>
@@ -212,24 +191,72 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* MAP / LOCATION PLACEHOLDER SECTION */}
+      {/* MAP / GLOBAL FOOTPRINT SECTION */}
       <section className="section map-section">
         <div className="container">
           <SectionHeading
             subtitle="GLOBAL FOOTPRINT"
-            title="Our Offices Around The World"
-            description="ANVI GROUPS operates regional hubs across New York, London, Singapore, Tokyo, and Mumbai."
+            title="Strategic Presence Across World Markets"
+            description="ANVI GROUPS maintains active commercial hubs, technological partnerships, and strategic trade corridors across India, Italy, Malta, Spain, USA, Canada, and Dubai."
           />
           <div className="map-placeholder-box">
             <img
               src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1600&q=80"
-              alt="Global Operations Map"
+              alt="ANVI GROUPS Global Footprint"
               className="map-img"
             />
             <div className="map-overlay-card">
               <h4>ANVI GROUPS Global Presence</h4>
-              <p>5 Global Hubs | 12 Regional Offices | 15,000+ Personnel</p>
+              <p>INDIA · ITALY · MALTA · SPAIN · USA · CANADA · DUBAI</p>
             </div>
+          </div>
+
+          <div className="footprint-countries-grid">
+            {[
+              {
+                country: 'INDIA',
+                hub: 'Headquarters & Engineering Hub',
+                desc: 'Software development, enterprise cloud platforms, and large-scale industrial operations.'
+              },
+              {
+                country: 'ITALY',
+                hub: 'European Commercial & Design',
+                desc: 'Strategic trade networks, luxury architecture, and high-value European commercial initiatives.'
+              },
+              {
+                country: 'MALTA',
+                hub: 'Mediterranean Maritime & Trade',
+                desc: 'Strategic maritime logistics, international trade compliance, and cross-border distribution.'
+              },
+              {
+                country: 'SPAIN',
+                hub: 'Southern European Distribution',
+                desc: 'Multimodal freight routing, supply chain coordination, and industrial commerce corridors.'
+              },
+              {
+                country: 'USA',
+                hub: 'Enterprise Software & Ventures',
+                desc: 'Advanced software architectures, venture capital allocation, and enterprise partnerships.'
+              },
+              {
+                country: 'CANADA',
+                hub: 'North American Tech Hub',
+                desc: 'Next-generation tech engineering, digital platform scaling, and cross-border commercial trade.'
+              },
+              {
+                country: 'DUBAI',
+                hub: 'Middle East Corporate Gateway',
+                desc: 'Global commodities trading, regional logistics leadership, and Middle Eastern investments.'
+              }
+            ].map((loc) => (
+              <div key={loc.country} className="footprint-country-card">
+                <div className="country-flag-header">
+                  <span className="country-name">{loc.country}</span>
+                </div>
+                <span className="country-hub-badge">{loc.hub}</span>
+                <p className="country-desc">{loc.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

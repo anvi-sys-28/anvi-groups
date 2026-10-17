@@ -8,93 +8,89 @@ import DuotoneTeamRoster from '../components/ui/duotone-team-roster';
 export default function About() {
   const executiveMembers = [
     {
-      name: 'Jashwanth Rao Gajvelli & Family',
-      role: 'Founder & Principal Stewardship',
-      craft: 'Founder',
-      bio: 'Leading ANVI GROUPS with a dedicated mission: serving with quality, helping businesses grow globally, and empowering enterprises to go digital with great software solutions.',
-      photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80',
+      name: 'Jashwanth',
+      role: 'Director',
+      craft: 'Director',
+      bio: 'Directing ANVI GROUPS with enduring vision, leading strategic initiatives across enterprise software, industrial investments, and international business growth.',
+      photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=720&h=960&q=80',
       linkLabel: 'Connect',
       href: '/contact'
     },
     {
-      name: 'Dr. Elena Rostova',
-      role: 'Chief Technology Officer',
-      craft: 'CTO',
-      bio: 'Oversees enterprise AI architectures, quantum computing systems, and global digital infrastructure.',
-      photo: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80',
-      linkLabel: 'Say hello',
+      name: 'Rohan',
+      role: 'Managing Director',
+      craft: 'MD',
+      bio: 'Steering corporate operations, executive execution, and commercial scalability across ANVI GROUPS global business sectors.',
+      photo: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=720&h=960&q=80',
+      linkLabel: 'Connect',
       href: '/contact'
     },
     {
-      name: 'Rajesh K. Mehta',
-      role: 'CEO, ANVI Infra & Energy',
-      craft: 'Infra',
-      bio: 'Drives large-scale urban infrastructure projects, green energy grids, and port logistics corridors.',
-      photo: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80',
-      linkLabel: 'Say hello',
+      name: 'Vasavi',
+      role: 'Legal Advisor',
+      craft: 'Legal',
+      bio: 'Leading corporate legal counsel, cross-border compliance, regulatory affairs, and institutional contract governance.',
+      photo: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=720&h=960&q=80',
+      linkLabel: 'Legal Desk',
       href: '/contact'
     },
     {
-      name: 'Vikramaditya Rao',
-      role: 'Managing Director, Global Exports',
-      craft: 'Exports',
-      bio: 'Directs international supply chains, multimodal shipping logistics, and cross-border commercial compliance.',
-      photo: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=800&q=80',
-      linkLabel: 'Say hello',
+      name: 'Dileep',
+      role: 'Legal Advisor',
+      craft: 'Legal',
+      bio: 'Specializing in international corporate law, strategic joint ventures, commercial agreements, and risk mitigation.',
+      photo: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=720&h=960&q=80',
+      linkLabel: 'Legal Desk',
       href: '/contact'
     },
     {
-      name: 'Sophia Lin',
-      role: 'VP, Enterprise Software Solutions',
-      craft: 'Software',
-      bio: 'Architects enterprise cloud platforms, workflow automation suites, and custom digital transformation tools.',
-      photo: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=800&q=80',
-      linkLabel: 'Say hello',
+      name: 'Prem',
+      role: 'Board Member',
+      craft: 'Board',
+      bio: 'Providing board-level oversight on multi-sector capital allocation, sustainable industrial infrastructure, and governance.',
+      photo: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=720&h=960&q=80',
+      linkLabel: 'Board Office',
       href: '/contact'
     },
     {
-      name: 'Marcus Vance',
-      role: 'Head of Capital Allocation & M&A',
-      craft: 'Capital',
-      bio: 'Steers private equity investments, international strategic acquisitions, and corporate treasury growth.',
-      photo: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=800&q=80',
-      linkLabel: 'Say hello',
-      href: '/contact'
-    },
-    {
-      name: 'Ananya Patel',
-      role: 'Chief ESG & Sustainability Officer',
-      craft: 'ESG',
-      bio: 'Guarantees net-zero carbon benchmarks, renewable energy standards, and transparent stakeholder governance.',
-      photo: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80',
-      linkLabel: 'Say hello',
-      href: '/contact'
-    },
-    {
-      name: 'David Chen',
-      role: 'Chief Operating Officer',
-      craft: 'Operations',
-      bio: 'Oversees operational rigor, capital allocation efficiency, and global standard operational consistency.',
-      photo: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80',
-      linkLabel: 'Say hello',
+      name: 'Shashank',
+      role: 'Board Member',
+      craft: 'Board',
+      bio: 'Guiding corporate strategy on technology transformation, international market expansion, and long-term stakeholder value.',
+      photo: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=720&h=960&q=80',
+      linkLabel: 'Board Office',
       href: '/contact'
     }
   ];
 
   const openRoles = [
     {
-      title: 'Lead AI Systems Architect',
-      href: '/contact',
-      craft: 'Engineering',
-      note: 'Scale high-throughput neural networks and distributed real-time telemetry systems.',
-      mark: 'You?'
-    },
-    {
       title: 'VP of Global Business Development',
       href: '/contact',
       craft: 'Growth',
-      note: 'Spearhead cross-border enterprise partnerships across EMEA, APAC, and the Americas.',
-      mark: 'Join?'
+      note: 'Leading strategic international client partnerships across India, Europe, USA, and the Middle East.',
+      mark: 'JOIN'
+    },
+    {
+      title: 'Chief Technology & AI Architect',
+      href: '/contact',
+      craft: 'Tech / AI',
+      note: 'Architecting high-scale enterprise cloud solutions and intelligent automation systems.',
+      mark: 'You?'
+    },
+    {
+      title: 'Director of International Trade & Logistics',
+      href: '/contact',
+      craft: 'Logistics',
+      note: 'Directing multimodal shipping corridors, port infrastructure, and global supply distribution.',
+      mark: 'BUILD'
+    },
+    {
+      title: 'Head of Strategic Capital & M&A',
+      href: '/contact',
+      craft: 'Venture',
+      note: 'Steering cross-border corporate mergers, capital allocation, and new market ventures.',
+      mark: 'SCALE'
     }
   ];
 
@@ -107,29 +103,16 @@ export default function About() {
         height="840px"
         eyebrow="EXECUTIVE LEADERSHIP"
         title={"Guided by\nStewardship"}
-        intro="Our executive team combines decades of global leadership across industrial operations, enterprise software solutions, and international capital markets."
+        intro="Our leadership team drives strategic vision, corporate governance, and sustainable multi-sector growth across ANVI GROUPS global verticals."
         members={executiveMembers}
         openRoles={openRoles}
         cta={{ label: "Connect with leadership", href: "/contact" }}
         secondaryCta={{ label: "Career opportunities", href: "/contact" }}
       />
 
-      {/* 2. FAMILY STEWARDSHIP & MISSION / WHO WE ARE */}
+      {/* 2. WHO WE ARE */}
       <section className="section about-who-section">
         <div className="container">
-          <div className="family-legacy-box">
-            <div className="legacy-icon">
-              <Award size={28} />
-            </div>
-            <div className="legacy-content">
-              <span className="legacy-tag">FAMILY STEWARDSHIP & MISSION</span>
-              <h3>Serving with Quality · Driving Global Growth · Digital Innovation</h3>
-              <p>
-                At ANVI GROUPS, <strong>Jashwanth Rao Gajvelli and family</strong> serve with quality, helping businesses grow globally and empowering enterprises to go digitally with great software solutions. We combine integrity, technological leadership, and long-term vision to build sustainable value for businesses across every continent.
-              </p>
-            </div>
-          </div>
-
           <div className="about-hero-img-container">
             <img
               src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1800&q=85"
