@@ -1214,8 +1214,12 @@ html.motion-pending .demo-card { opacity: 0; transform-origin: 82% 50%; animatio
   max-width: 720px;
 }
 
+.about-page .dtr {
+  padding-top: clamp(80px, 9vw, 120px);
+}
+
 .about-page .about-who-section {
-  padding-top: clamp(110px, 12vw, 150px);
+  padding-top: clamp(60px, 7vw, 90px);
 }
 
 .about-hero-full-img {

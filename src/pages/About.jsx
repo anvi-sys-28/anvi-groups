@@ -100,7 +100,21 @@ export default function About() {
 
   return (
     <div className="anvi-page about-page">
-      {/* WHO WE ARE & HERO IMAGE */}
+      {/* 1. DUOTONE EXECUTIVE LEADERSHIP ROSTER (FIRST SECTION) */}
+      <DuotoneTeamRoster
+        preset="ember"
+        columns={3}
+        height="840px"
+        eyebrow="EXECUTIVE LEADERSHIP"
+        title={"Guided by\nStewardship"}
+        intro="Our executive team combines decades of global leadership across industrial operations, enterprise software solutions, and international capital markets."
+        members={executiveMembers}
+        openRoles={openRoles}
+        cta={{ label: "Connect with leadership", href: "/contact" }}
+        secondaryCta={{ label: "Career opportunities", href: "/contact" }}
+      />
+
+      {/* 2. FAMILY STEWARDSHIP & MISSION / WHO WE ARE */}
       <section className="section about-who-section">
         <div className="container">
           <div className="family-legacy-box">
@@ -140,7 +154,27 @@ export default function About() {
         </div>
       </section>
 
-      {/* VISION & MISSION */}
+      {/* 3. OUR CORE VALUES */}
+      <section className="section values-section">
+        <div className="container">
+          <SectionHeading
+            subtitle="OUR CORE VALUES"
+            title="What Defines ANVI GROUPS"
+            description="Our values shape our culture, govern our decisions, and set the standard for how we build partnerships worldwide."
+          />
+          <div className="values-grid">
+            {companyApproach.map((v) => (
+              <div key={v.number} className="value-item">
+                <span className="value-num">{v.number}</span>
+                <h4>{v.title}</h4>
+                <p>{v.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. VISION & MISSION */}
       <section className="section vision-mission-section">
         <div className="container">
           <div className="vision-mission-grid">
@@ -162,42 +196,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* VALUES */}
-      <section className="section values-section">
-        <div className="container">
-          <SectionHeading
-            subtitle="OUR CORE VALUES"
-            title="What Defines ANVI GROUPS"
-            description="Our values shape our culture, govern our decisions, and set the standard for how we build partnerships worldwide."
-          />
-          <div className="values-grid">
-            {companyApproach.map((v) => (
-              <div key={v.number} className="value-item">
-                <span className="value-num">{v.number}</span>
-                <h4>{v.title}</h4>
-                <p>{v.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* DUOTONE EXECUTIVE LEADERSHIP ROSTER */}
-      <DuotoneTeamRoster
-        preset="ember"
-        columns={3}
-        height="800px"
-        eyebrow="EXECUTIVE LEADERSHIP"
-        title={"Guided by\nStewardship"}
-        intro="Our executive team combines decades of global leadership across industrial operations, enterprise software solutions, and international capital markets."
-        members={executiveMembers}
-        openRoles={openRoles}
-        cta={{ label: "Connect with leadership", href: "/contact" }}
-        secondaryCta={{ label: "Career opportunities", href: "/contact" }}
-      />
-
-
-      {/* GROWTH & FUTURE CTA */}
+      {/* 5. GROWTH & FUTURE CTA */}
       <section className="section about-cta-section">
         <div className="container">
           <div className="about-cta-inner">
