@@ -49,6 +49,8 @@ export type TeamMember = {
   bio?: string
   /** Portrait URL. A monogram plate stands in when missing or broken. */
   photo?: string
+  /** Custom mark or monogram on the plate. Defaults to initials. */
+  mark?: string
   /** object-position for the portrait, e.g. "50% 30%". */
   focus?: string
   href?: string
@@ -508,8 +510,8 @@ function Portrait(props: {
           </>
         ) : (
           <div className="dtr-plate" aria-hidden="true">
-            <span>{member ? initials(member.name) : (role && role.mark) || "You?"}</span>
-            {role ? <em>{role.title}</em> : null}
+            <span>{member ? (member.mark || initials(member.name)) : (role && role.mark) || "You?"}</span>
+            {role ? <em>{role.title}</em> : member ? <em>{member.name}</em> : null}
           </div>
         )}
       </div>

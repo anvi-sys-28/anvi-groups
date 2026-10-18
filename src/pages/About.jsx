@@ -11,8 +11,8 @@ export default function About() {
       name: 'Jashwanth',
       role: 'Director',
       craft: 'Director',
+      mark: 'J',
       bio: 'Directing ANVI GROUPS with enduring vision, leading strategic initiatives across enterprise software, industrial investments, and international business growth.',
-      photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=720&h=960&q=80',
       linkLabel: 'Connect',
       href: '/contact'
     },
@@ -20,8 +20,8 @@ export default function About() {
       name: 'Rohan',
       role: 'Managing Director',
       craft: 'MD',
+      mark: 'R',
       bio: 'Steering corporate operations, executive execution, and commercial scalability across ANVI GROUPS global business sectors.',
-      photo: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=720&h=960&q=80',
       linkLabel: 'Connect',
       href: '/contact'
     },
@@ -29,8 +29,8 @@ export default function About() {
       name: 'Vasavi',
       role: 'Legal Advisor',
       craft: 'Legal',
+      mark: 'V',
       bio: 'Leading corporate legal counsel, cross-border compliance, regulatory affairs, and institutional contract governance.',
-      photo: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=720&h=960&q=80',
       linkLabel: 'Legal Desk',
       href: '/contact'
     },
@@ -38,8 +38,8 @@ export default function About() {
       name: 'Dileep',
       role: 'Legal Advisor',
       craft: 'Legal',
+      mark: 'D',
       bio: 'Specializing in international corporate law, strategic joint ventures, commercial agreements, and risk mitigation.',
-      photo: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=720&h=960&q=80',
       linkLabel: 'Legal Desk',
       href: '/contact'
     },
@@ -47,8 +47,8 @@ export default function About() {
       name: 'Prem',
       role: 'Board Member',
       craft: 'Board',
+      mark: 'P',
       bio: 'Providing board-level oversight on multi-sector capital allocation, sustainable industrial infrastructure, and governance.',
-      photo: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=720&h=960&q=80',
       linkLabel: 'Board Office',
       href: '/contact'
     },
@@ -56,8 +56,8 @@ export default function About() {
       name: 'Shashank',
       role: 'Board Member',
       craft: 'Board',
+      mark: 'S',
       bio: 'Guiding corporate strategy on technology transformation, international market expansion, and long-term stakeholder value.',
-      photo: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=720&h=960&q=80',
       linkLabel: 'Board Office',
       href: '/contact'
     }
