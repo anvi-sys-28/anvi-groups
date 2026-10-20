@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [currentTime, setCurrentTime] = useState(new Date());
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const navRef = useRef(null);
   const toggleRef = useRef(null);
@@ -30,6 +31,16 @@ export default function Header() {
     month: 'short',
     year: 'numeric'
   });
+
+  // Track scroll position to update header styling on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Close menu on route change
   useEffect(() => {
@@ -66,14 +77,16 @@ export default function Header() {
     };
   }, [menuOpen]);
 
+  const isHomeTop = location.pathname === '/' && !scrolled && !menuOpen;
+
   return (
-    <header className={`header ${menuOpen ? 'menu-open' : ''}`}>
+    <header className={`header ${menuOpen ? 'menu-open' : ''} ${scrolled ? 'is-scrolled' : ''} ${isHomeTop ? 'at-top' : 'has-bg'}`}>
       <Link to="/" className="brand" aria-label="ANVI GROUPS home">
         <img
-          src="/assets/l.png"
+          src="/l.webp"
           onError={(e) => {
             e.target.onerror = null;
-            e.target.src = '/assets/l.webp';
+            e.target.src = '/assets/l.png';
           }}
           alt="ANVI GROUPS Logo"
           className="brand-logo-img"
@@ -81,10 +94,9 @@ export default function Header() {
       </Link>
 
       <div
-        className="header-actions"
+        className={`header-actions ${menuOpen ? 'open' : ''}`}
         id="tablet-navigation"
         ref={navRef}
-        aria-hidden={!menuOpen ? 'true' : undefined}
       >
         <nav className="nav">
           <Link
@@ -126,8 +138,8 @@ export default function Header() {
       >
         <svg
           className="hamburger-icon"
-          width="20"
-          height="20"
+          width="22"
+          height="22"
           viewBox="0 0 20 20"
           fill="none"
           stroke="currentColor"
@@ -141,8 +153,9 @@ export default function Header() {
             </>
           ) : (
             <>
-              <line x1="3" y1="7" x2="17" y2="7" />
-              <line x1="3" y1="13" x2="17" y2="13" />
+              <line x1="3" y1="6" x2="17" y2="6" />
+              <line x1="3" y1="10" x2="17" y2="10" />
+              <line x1="3" y1="14" x2="17" y2="14" />
             </>
           )}
         </svg>
