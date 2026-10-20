@@ -167,11 +167,11 @@ body.anvi-preloader-active {
 
 /* 1. AN Monogram Mark (Traced Vector SVG with Stroke & Fill Animation) */
 .anvi-brand-monogram {
-  width: clamp(96px, 14vw, 138px);
+  width: clamp(140px, 18.5vw, 195px);
   height: auto;
   overflow: visible;
-  margin-bottom: clamp(14px, 2.5vh, 22px);
-  filter: drop-shadow(0 0 16px rgba(255, 255, 255, 0.45));
+  margin-bottom: clamp(18px, 3vh, 28px);
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
 }
 
 .anvi-monogram-path {
@@ -393,6 +393,11 @@ body.anvi-preloader-active {
 /* RESPONSIVE MOBILE ADAPTATIONS                                              */
 /* -------------------------------------------------------------------------- */
 @media (max-width: 600px) {
+  .anvi-brand-monogram {
+    width: clamp(120px, 32vw, 160px);
+    margin-bottom: 16px;
+  }
+
   .anvi-brand-title {
     letter-spacing: 0.2em;
     font-size: clamp(1.85rem, 8.5vw, 2.5rem);
