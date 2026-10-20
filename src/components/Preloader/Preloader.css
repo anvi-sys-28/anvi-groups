@@ -1,76 +1,138 @@
-/* ========================================================= */
-/* ANVI GROUPS CLASSIC LUXURY HERITAGE SPLASH SCREEN         */
-/* Minimal, refined, calm, private-banking aesthetic         */
-/* ========================================================= */
+/* ========================================================================== */
+/* ANVI GROUPS BRAND-EXACT CINEMATIC SPLASH SCREEN                            */
+/* Matching Real Logo: Glossy Orange Panels, White Glowing Monogram, Serifs   */
+/* ========================================================================== */
 
-/* Prevent scrollbar flicker and page shift */
+:root {
+  --anvi-orange-dark: #7A2406;
+  --anvi-orange-rich: #D9480F;
+  --anvi-orange-bright: #FF7A1A;
+  --anvi-amber-highlight: #FFB36B;
+  --anvi-pure-white: #FFFFFF;
+  --anvi-secondary-white: rgba(255, 255, 255, 0.85);
+  --anvi-muted-white: rgba(255, 255, 255, 0.50);
+}
+
+/* Prevent any vertical or horizontal scrollbar / layout shift */
 html.anvi-preloader-active,
 body.anvi-preloader-active {
   overflow: hidden !important;
   height: 100% !important;
+  height: 100dvh !important;
 }
 
 .anvi-preloader-root {
   position: fixed;
+  inset: 0;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
   max-width: 100vw;
-  max-height: 100vh;
+  max-height: 100dvh;
   z-index: 999999;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: #04140e;
+  background: var(--anvi-orange-dark);
   user-select: none;
   -webkit-user-select: none;
 }
 
-/* --------------------------------------------------------- */
-/* TWO-PANEL SPLIT SHUTTER (TOP & BOTTOM)                    */
-/* --------------------------------------------------------- */
-.preloader-shutter-panel {
+/* -------------------------------------------------------------------------- */
+/* 7 VERTICAL PANELS (RECREATING THE GLOSSY METAL/GLASS PANELS OF THE LOGO)   */
+/* -------------------------------------------------------------------------- */
+.anvi-panels-container {
   position: absolute;
-  left: 0;
+  inset: 0;
   width: 100%;
-  height: 50.2%;
-  background: radial-gradient(ellipse at 50% 50%, #06231a 0%, #04140e 100%);
+  height: 100%;
   z-index: 1;
   pointer-events: none;
-  transition: transform 0.95s cubic-bezier(0.65, 0, 0.35, 1);
-  will-change: transform;
+  overflow: hidden;
 }
 
-.preloader-shutter-top {
+.anvi-panel-strip {
+  position: absolute;
   top: 0;
-}
-
-.preloader-shutter-bottom {
   bottom: 0;
+  width: calc(100% / 7 + 1px);
+  background: linear-gradient(155deg, #6B1C03 0%, #B83808 30%, #D9480F 65%, #FF7A1A 95%);
+  will-change: transform;
+  transition: transform 0.95s cubic-bezier(0.65, 0, 0.35, 1) var(--panel-delay, 0s);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  border-left: 1px solid rgba(0, 0, 0, 0.12);
 }
 
-.anvi-preloader-root.is-exiting .preloader-shutter-top {
-  transform: translateY(-100%);
+/* Position each of the 7 panels horizontally */
+.anvi-panel-0 { left: 0%; }
+.anvi-panel-1 { left: calc(100% / 7 * 1); }
+.anvi-panel-2 { left: calc(100% / 7 * 2); }
+.anvi-panel-3 { left: calc(100% / 7 * 3); }
+.anvi-panel-4 { left: calc(100% / 7 * 4); }
+.anvi-panel-5 { left: calc(100% / 7 * 5); }
+.anvi-panel-6 { left: calc(100% / 7 * 6); }
+
+/* Soft glossy streaks inside each panel replicating the logo's lighting */
+.anvi-panel-streak {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  animation: anviStreakFadeIn 1s ease 0.1s forwards;
 }
 
-.anvi-preloader-root.is-exiting .preloader-shutter-bottom {
-  transform: translateY(100%);
+.streak-0 {
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 180, 107, 0.14) 40%, transparent 85%);
+}
+.streak-1 {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.18) 20%, rgba(255, 200, 140, 0.28) 60%, transparent 100%);
+}
+.streak-2 {
+  background: linear-gradient(90deg, transparent 10%, rgba(255, 255, 255, 0.12) 50%, transparent 90%);
+}
+.streak-3 {
+  /* Center focal panel */
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 240, 200, 0.32) 50%, rgba(255, 180, 107, 0.16) 100%);
+}
+.streak-4 {
+  background: linear-gradient(90deg, transparent 15%, rgba(255, 255, 255, 0.14) 55%, transparent 95%);
+}
+.streak-5 {
+  background: linear-gradient(90deg, rgba(255, 220, 160, 0.22) 10%, rgba(255, 255, 255, 0.20) 65%, transparent 100%);
+}
+.streak-6 {
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 180, 107, 0.15) 60%, transparent 100%);
 }
 
-/* --------------------------------------------------------- */
-/* SUBTLE STATIC VIGNETTE & MICRO NOISE                      */
-/* --------------------------------------------------------- */
-.preloader-vignette {
+@keyframes anviStreakFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Staggered Shutter Panel Reveal on Exit */
+.anvi-preloader-root.is-exiting .anvi-panel-strip.slide-up {
+  transform: translateY(-102%);
+}
+
+.anvi-preloader-root.is-exiting .anvi-panel-strip.slide-down {
+  transform: translateY(102%);
+}
+
+/* -------------------------------------------------------------------------- */
+/* EDGE VIGNETTE & MICRO NOISE                                                */
+/* -------------------------------------------------------------------------- */
+.anvi-edge-vignette {
   position: absolute;
   inset: 0;
   z-index: 2;
   pointer-events: none;
-  background: radial-gradient(circle at 50% 50%, rgba(6, 35, 26, 0.45) 0%, rgba(4, 20, 14, 0.95) 75%, #03100a 100%);
+  background: radial-gradient(circle at 50% 50%, transparent 35%, rgba(65, 15, 2, 0.45) 75%, rgba(38, 8, 1, 0.85) 100%);
 }
 
-.preloader-noise-grain {
+.anvi-micro-grain {
   position: absolute;
   inset: 0;
   z-index: 3;
@@ -80,10 +142,10 @@ body.anvi-preloader-active {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
-/* --------------------------------------------------------- */
-/* CENTER BRAND CARD & TYPOGRAPHY                            */
-/* --------------------------------------------------------- */
-.preloader-stage {
+/* -------------------------------------------------------------------------- */
+/* CENTER CONTENT STACK (LOGO, NAME, DIVIDERS, SUBSIDIARIES)                  */
+/* -------------------------------------------------------------------------- */
+.anvi-center-stack {
   position: relative;
   z-index: 10;
   display: flex;
@@ -94,220 +156,254 @@ body.anvi-preloader-active {
   padding: 0 24px;
   max-width: 900px;
   width: 100%;
-  transition: opacity 0.4s ease, transform 0.5s ease;
   will-change: opacity, transform;
 }
 
-.anvi-preloader-root.is-exiting .preloader-stage {
+.anvi-preloader-root.is-exiting .anvi-center-stack {
   opacity: 0;
-  transform: scale(0.985);
+  transform: scale(0.98);
+  transition: opacity 0.35s ease, transform 0.45s ease;
 }
 
-/* Reveal Lines: Vertical seed that becomes Horizontal curtain-line */
-.preloader-reveal-line-v {
-  width: 1px;
-  height: 28px;
-  background: #C9A24B;
-  transform: scaleY(0);
-  transform-origin: top center;
-  animation: preloaderLineDown 0.45s cubic-bezier(0.65, 0, 0.35, 1) 0.35s forwards;
-  margin-bottom: -1px;
+/* 1. AN Monogram Mark (Traced Vector SVG with Stroke & Fill Animation) */
+.anvi-brand-monogram {
+  width: clamp(96px, 14vw, 138px);
+  height: auto;
+  overflow: visible;
+  margin-bottom: clamp(14px, 2.5vh, 22px);
+  filter: drop-shadow(0 0 16px rgba(255, 255, 255, 0.45));
 }
 
-.preloader-reveal-line-h {
-  width: clamp(140px, 28vw, 320px);
-  height: 1px;
-  background: linear-gradient(90deg, transparent 0%, #C9A24B 30%, #C9A24B 70%, transparent 100%);
-  transform: scaleX(0);
-  transform-origin: center center;
-  animation: preloaderLineExpand 0.65s cubic-bezier(0.65, 0, 0.35, 1) 0.75s forwards;
-  margin-bottom: clamp(22px, 3.5vh, 36px);
+.anvi-monogram-path {
+  fill: var(--anvi-pure-white);
+  fill-opacity: 0;
+  stroke: var(--anvi-pure-white);
+  stroke-width: 3.5px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: anviMonogramDraw 1.25s cubic-bezier(0.65, 0, 0.35, 1) 0.4s forwards,
+             anviMonogramFill 0.75s cubic-bezier(0.65, 0, 0.35, 1) 1.5s forwards;
 }
 
-@keyframes preloaderLineDown {
-  0% { transform: scaleY(0); opacity: 0; }
-  100% { transform: scaleY(1); opacity: 0.85; }
+@keyframes anviMonogramDraw {
+  0% { stroke-dashoffset: 100; }
+  100% { stroke-dashoffset: 0; }
 }
 
-@keyframes preloaderLineExpand {
-  0% { transform: scaleX(0); opacity: 0; }
-  100% { transform: scaleX(1); opacity: 0.75; }
+@keyframes anviMonogramFill {
+  0% { fill-opacity: 0; }
+  100% { fill-opacity: 1; }
 }
 
-/* Company Name: Classic High-Contrast Serif */
-.preloader-brand-title {
+/* 2. Company Name: Classic Bold High-Contrast Serif */
+.anvi-brand-title {
   margin: 0;
   padding: 0;
-  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
-  font-size: clamp(2.3rem, 6.2vw, 4.6rem);
-  font-weight: 400;
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(2.3rem, 5.8vw, 4.3rem);
+  font-weight: 700;
   line-height: 1.1;
   text-transform: uppercase;
-  color: #F4EEDC;
-  letter-spacing: 0.36em;
+  color: var(--anvi-pure-white);
+  text-shadow: 0 0 24px rgba(255, 255, 255, 0.45), 0 2px 10px rgba(0, 0, 0, 0.3);
   white-space: nowrap;
+  letter-spacing: 0.34em;
   opacity: 0;
   transform: translateY(12px);
-  animation: preloaderTitleSettle 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.95s forwards;
+  animation: anviTitleSettle 1.1s cubic-bezier(0.16, 1, 0.3, 1) 1.6s forwards;
 }
 
-@keyframes preloaderTitleSettle {
+@keyframes anviTitleSettle {
   0% {
     opacity: 0;
     transform: translateY(12px);
-    letter-spacing: 0.42em;
+    letter-spacing: 0.38em;
   }
   100% {
     opacity: 1;
     transform: translateY(0);
-    letter-spacing: 0.28em;
+    letter-spacing: 0.26em;
   }
 }
 
-/* Diamond Divider */
-.preloader-diamond-wrap {
+/* 3. Thin White Horizontal Lines (Top & Bottom) */
+.anvi-divider-line {
+  width: clamp(170px, 32vw, 340px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.95) 25%, rgba(255, 255, 255, 0.95) 75%, transparent 100%);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.45);
+  transform: scaleX(0);
+  transform-origin: center center;
+}
+
+.anvi-line-top {
+  margin: clamp(14px, 2.2vh, 22px) 0 clamp(12px, 1.8vh, 18px);
+  animation: anviLineExpand 0.65s cubic-bezier(0.65, 0, 0.35, 1) 2.2s forwards;
+}
+
+.anvi-line-bottom {
+  margin-top: clamp(12px, 1.8vh, 18px);
+  animation: anviLineExpand 0.65s cubic-bezier(0.65, 0, 0.35, 1) 2.9s forwards;
+}
+
+@keyframes anviLineExpand {
+  0% { transform: scaleX(0); opacity: 0; }
+  100% { transform: scaleX(1); opacity: 1; }
+}
+
+/* 4. Subsidiary Names (Inter / Plus Jakarta Sans) */
+.anvi-subsidiaries-wrap {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  margin: clamp(16px, 2.6vh, 26px) 0 clamp(14px, 2.2vh, 22px);
-  opacity: 0;
-  animation: preloaderFadeIn 0.8s ease 1.85s forwards;
+  gap: clamp(6px, 1vh, 10px);
 }
 
-.preloader-diamond {
-  width: 5px;
-  height: 5px;
-  background: #C9A24B;
-  transform: rotate(45deg);
-}
-
-/* Tagline: Clean Sans-Serif, Wide Letter-Spacing */
-.preloader-brand-tagline {
+.anvi-subsidiary-name {
   margin: 0;
   padding: 0;
   font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  font-size: clamp(10px, 1.1vw, 12.5px);
-  font-weight: 400;
+  font-size: clamp(10.5px, 1.2vw, 13.5px);
+  font-weight: 500;
   line-height: 1.4;
-  letter-spacing: clamp(3px, 0.4vw, 5.5px);
+  letter-spacing: clamp(3px, 0.35vw, 5px);
   text-transform: uppercase;
-  color: rgba(244, 238, 220, 0.72);
+  color: var(--anvi-secondary-white);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+  white-space: nowrap;
+}
+
+.anvi-sub-1 {
   opacity: 0;
   transform: translateY(6px);
-  animation: preloaderFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 2.05s forwards;
+  animation: anviFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 2.5s forwards;
 }
 
-@keyframes preloaderFadeUp {
+.anvi-sub-2 {
+  opacity: 0;
+  transform: translateY(6px);
+  animation: anviFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 2.75s forwards;
+}
+
+@keyframes anviFadeUp {
   0% { opacity: 0; transform: translateY(6px); }
-  100% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0.88; transform: translateY(0); }
 }
 
-@keyframes preloaderFadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 0.85; }
+/* Optional Tagline */
+.anvi-optional-tagline {
+  margin: clamp(12px, 2vh, 18px) 0 0;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: clamp(9.5px, 1vw, 12px);
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  opacity: 0;
+  animation: anviFadeIn 0.8s ease 3.0s forwards;
 }
 
-/* --------------------------------------------------------- */
-/* BOTTOM CENTER PROGRESS LINE & TABULAR COUNTER             */
-/* --------------------------------------------------------- */
-.preloader-bottom-bar {
+@keyframes anviFadeIn {
+  to { opacity: 1; }
+}
+
+/* -------------------------------------------------------------------------- */
+/* BOTTOM PROGRESS TRACK & TABULAR COUNTER                                    */
+/* -------------------------------------------------------------------------- */
+.anvi-bottom-progress {
   position: absolute;
-  bottom: clamp(28px, 6vh, 48px);
+  bottom: clamp(24px, 5vh, 42px);
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   pointer-events: none;
   opacity: 0;
-  animation: preloaderFadeIn 0.7s ease 0.8s forwards;
-  transition: opacity 0.4s ease;
+  animation: anviFadeIn 0.6s ease 0.8s forwards;
+  transition: opacity 0.35s ease;
 }
 
-.anvi-preloader-root.is-exiting .preloader-bottom-bar {
+.anvi-preloader-root.is-exiting .anvi-bottom-progress {
   opacity: 0;
 }
 
-.preloader-progress-track {
-  width: clamp(100px, 16vw, 140px);
+.anvi-progress-line-track {
+  width: clamp(100px, 16vw, 150px);
   height: 1px;
-  background: rgba(244, 238, 220, 0.12);
+  background: rgba(255, 255, 255, 0.16);
   position: relative;
   overflow: hidden;
 }
 
-.preloader-progress-fill {
+.anvi-progress-line-fill {
   height: 100%;
-  background: #C9A24B;
+  background: var(--anvi-pure-white);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
   transition: width 0.1s linear;
 }
 
-.preloader-percentage-text {
+.anvi-progress-counter {
   font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: 400;
   letter-spacing: 1.5px;
-  color: rgba(201, 162, 75, 0.85);
+  color: var(--anvi-muted-white);
   font-variant-numeric: tabular-nums;
 }
 
-/* --------------------------------------------------------- */
-/* REDUCED MOTION PREFERENCE FALLBACK                        */
-/* --------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* REDUCED MOTION PREFERENCE FALLBACK                                         */
+/* -------------------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
-  .preloader-reveal-line-v,
-  .preloader-reveal-line-h,
-  .preloader-diamond-wrap {
+  .anvi-panel-streak,
+  .anvi-divider-line {
     display: none !important;
   }
 
-  .preloader-brand-title,
-  .preloader-brand-tagline,
-  .preloader-bottom-bar {
+  .anvi-monogram-path {
+    animation: none !important;
+    stroke-dashoffset: 0 !important;
+    fill-opacity: 1 !important;
+  }
+
+  .anvi-brand-title,
+  .anvi-subsidiary-name,
+  .anvi-bottom-progress {
     animation: none !important;
     transform: none !important;
     opacity: 1 !important;
-    letter-spacing: 0.28em !important;
   }
 
-  .preloader-shutter-panel {
-    transition: opacity 0.45s ease !important;
+  .anvi-panel-strip {
+    transition: opacity 0.4s ease !important;
   }
 
-  .anvi-preloader-root.is-exiting .preloader-shutter-top,
-  .anvi-preloader-root.is-exiting .preloader-shutter-bottom {
+  .anvi-preloader-root.is-exiting .anvi-panel-strip {
     transform: none !important;
     opacity: 0 !important;
   }
 }
 
-/* --------------------------------------------------------- */
-/* RESPONSIVE ADAPTATIONS (MOBILE)                           */
-/* --------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* RESPONSIVE MOBILE ADAPTATIONS                                              */
+/* -------------------------------------------------------------------------- */
 @media (max-width: 600px) {
-  .preloader-brand-title {
-    letter-spacing: 0.22em;
+  .anvi-brand-title {
+    letter-spacing: 0.2em;
     font-size: clamp(1.85rem, 8.5vw, 2.5rem);
   }
 
-  @keyframes preloaderTitleSettle {
-    0% {
-      opacity: 0;
-      transform: translateY(10px);
-      letter-spacing: 0.28em;
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-      letter-spacing: 0.2em;
-    }
+  .anvi-subsidiary-name {
+    letter-spacing: 2px;
+    font-size: 9.5px;
   }
 
-  .preloader-brand-tagline {
-    letter-spacing: 2px;
-    font-size: 9px;
-    max-width: 85vw;
+  .anvi-divider-line {
+    width: 220px;
   }
 }
