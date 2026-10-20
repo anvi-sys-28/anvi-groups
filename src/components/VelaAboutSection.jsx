@@ -114,7 +114,7 @@ export default function VelaAboutSection() {
               <nav className="vela-nav-links" aria-label="Primary navigation">
                 <span>Software</span>
                 <span aria-hidden="true">·</span>
-                <span>Exports</span>
+                <span>Mercantile</span>
                 <span aria-hidden="true">·</span>
                 <span>Enterprises</span>
               </nav>
@@ -126,13 +126,19 @@ export default function VelaAboutSection() {
                 <span className="vela-headline-serif">moves like light.</span>
               </h1>
               <p>
-                Built by ANVI GROUPS to accelerate business growth globally. Jashwanth Rao Gajvelli and family serve with quality — delivering next-generation software development, global export logistics, and high-impact digital solutions.
+                Built by ANVI GROUPS to accelerate business growth globally. Jashwanth Rao Gajvelli and family serve with quality — delivering next-generation software development, global mercantile trade logistics, and high-impact digital solutions.
               </p>
             </section>
 
             <section className="vela-cards" aria-label="Platform features">
-              {/* CARD 1: Global Trade & Export Logistics */}
-              <article className="vela-card vela-card-left" tabIndex={0} aria-label="Global Trade & Export Logistics">
+              {/* CARD 1: Global Mercantile & Trade Logistics */}
+              <article
+                className="vela-card vela-card-left"
+                tabIndex={0}
+                aria-label="Mercantile & Global Trade Logistics"
+                onClick={() => window.open('https://www.anvimercantile.in/', '_blank', 'noopener,noreferrer')}
+                style={{ cursor: 'pointer' }}
+              >
                 <div className="vela-left-surface" aria-hidden="true"></div>
                 <svg className="vela-card-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true">
                   <circle cx="16" cy="16" r="12" stroke="currentColor" strokeWidth="2.25" />
@@ -142,15 +148,16 @@ export default function VelaAboutSection() {
                     strokeWidth="2.05"
                   />
                 </svg>
+                <span className="vela-card-site">anvimercantile.in ↗</span>
                 <span className="vela-glass-pill vela-region-left">Asia-Pacific</span>
                 <span className="vela-glass-pill vela-region-right">Global Markets</span>
                 <span className="vela-glass-pill vela-live">
                   <i className="vela-dot"></i>
                   <span className="vela-live-copy">Active Trade</span>
                 </span>
-                <span className="vela-glass-pill vela-regions">25+ Export Markets</span>
+                <span className="vela-glass-pill vela-regions">Worldwide Logistics</span>
                 <h2 className="vela-card-title">
-                  ANVI EXPORTS: Global supply chains for <strong>worldwide commerce.</strong>
+                  ANVI MERCANTILE PVT, LTD.: Global supply chains for <strong>worldwide commerce.</strong>
                 </h2>
               </article>
 
@@ -159,6 +166,8 @@ export default function VelaAboutSection() {
                 className="vela-card vela-card-middle"
                 tabIndex={0}
                 aria-label="Software Development & Next-Gen Tech"
+                onClick={() => window.open('https://anvitechindia.com/', '_blank', 'noopener,noreferrer')}
+                style={{ cursor: 'pointer' }}
                 onPointerEnter={startTelemetry}
                 onPointerLeave={stopTelemetry}
                 onFocus={startTelemetry}
@@ -168,7 +177,7 @@ export default function VelaAboutSection() {
                   <path d="M2 13S7.8 4 17 4s15 9 15 9-5.8 9-15 9S2 13 2 13Z" stroke="currentColor" strokeWidth="2.1" />
                   <circle cx="17" cy="13" r="4.2" stroke="currentColor" strokeWidth="2.1" />
                 </svg>
-                <span className="vela-card-site">anvitech.in</span>
+                <span className="vela-card-site">anvitechindia.com ↗</span>
                 <div className="vela-orbit" aria-hidden="true">
                   <div className="vela-orbit-dot-bottom"></div>
                 </div>
@@ -185,7 +194,7 @@ export default function VelaAboutSection() {
                   <i className="vela-dot violet"></i>
                   <span className="vela-telemetry-number" data-baseline="128">{telemetry.requests}</span>&nbsp; k req/s
                 </span>
-                <p className="vela-card-copy">ANVITECH: Enterprise software solutions, custom AI systems & cloud platforms.</p>
+                <p className="vela-card-copy">ANVITECH INDIA PVT, LTD.: Enterprise software solutions, custom AI systems & cloud platforms.</p>
               </article>
 
               {/* CARD 3: Interiors & Brand Advertising */}

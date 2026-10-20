@@ -18,12 +18,12 @@ export default function Footer() {
           ]
         },
         {
-          title: "Sectors",
+          title: "Enterprises",
           links: [
-            { label: "ANVI Technologies", href: "/#businesses" },
-            { label: "ANVI Infra", href: "/#businesses" },
-            { label: "ANVI Digital", href: "/#businesses" },
-            { label: "ANVI Ventures", href: "/#businesses" }
+            { label: "ANVITECH INDIA PVT, LTD.", href: "https://anvitechindia.com/" },
+            { label: "ANVI MERCANTILE PVT, LTD.", href: "https://www.anvimercantile.in/" },
+            { label: "ANVI Interiors", href: "/#businesses" },
+            { label: "ANVI Advertising", href: "/#businesses" }
           ]
         },
         {

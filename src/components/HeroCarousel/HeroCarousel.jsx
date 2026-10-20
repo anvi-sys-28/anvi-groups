@@ -224,19 +224,36 @@ export default function HeroCarousel() {
               </div>
               <h1 className="hero-heading">{displayTextSlide.title}</h1>
               <p className="hero-description">{displayTextSlide.description}</p>
-              <button
-                className="hero-cta-outline-btn"
-                onClick={() => {
-                  const nextSection =
-                    document.querySelector('.intro-section') ||
-                    document.querySelector('.vela-section-container');
-                  if (nextSection) {
-                    nextSection.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
-              >
-                <span>{displayTextSlide.cta}</span>
-              </button>
+              {displayTextSlide.url ? (
+                <a
+                  href={displayTextSlide.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hero-cta-outline-btn"
+                  style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}
+                >
+                  <span>{displayTextSlide.cta}</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              ) : (
+                <button
+                  className="hero-cta-outline-btn"
+                  onClick={() => {
+                    const nextSection =
+                      document.querySelector('.intro-section') ||
+                      document.querySelector('.vela-section-container');
+                    if (nextSection) {
+                      nextSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
+                >
+                  <span>{displayTextSlide.cta}</span>
+                </button>
+              )}
             </motion.div>
           </AnimatePresence>
         </div>

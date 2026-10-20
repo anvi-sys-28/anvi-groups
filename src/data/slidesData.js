@@ -4,18 +4,20 @@ export const heroSlides = [
     title: "Software Development & Next-Gen Tech",
     subtitle: "ANVITECH INDIA PVT, LTD.",
     description: "Cutting-edge enterprise software platforms, cloud engineering, and intelligent digital systems built by ANVITECH INDIA PVT, LTD.",
-    cta: "Explore Software Services",
+    cta: "Explore ANVITECH",
+    url: "https://anvitechindia.com/",
     image: "/assets/s.webp",
     tag: "Software Solutions"
   },
   {
     id: 'im',
-    title: "Global Trade & Export Logistics",
-    subtitle: "ANVI EXPORTS",
-    description: "Worldwide trade operations, high-quality commodity exports, and integrated global supply chain distribution networks.",
-    cta: "Explore Global Exports",
+    title: "Mercantile & Global Trade Logistics",
+    subtitle: "ANVI MERCANTILE PVT, LTD.",
+    description: "Worldwide trade operations, mercantile solutions, and integrated global supply chain distribution networks.",
+    cta: "Explore ANVI Mercantile",
+    url: "https://www.anvimercantile.in/",
     image: "/assets/im.webp",
-    tag: "Global Trade"
+    tag: "Mercantile & Trade"
   },
   {
     id: 'i',
@@ -44,15 +46,17 @@ export const businessVerticals = [
     subtitle: 'ANVITECH INDIA PVT, LTD.',
     description: 'Enterprise AI, cloud engineering, next-gen software, and data infrastructure driving global digital transformation.',
     image: '/assets/s.webp',
-    stats: 'ANVITECH INDIA PVT, LTD.'
+    stats: 'anvitechindia.com',
+    url: 'https://anvitechindia.com/'
   },
   {
     id: 'im',
-    title: 'Exports & Trade Logistics',
-    subtitle: 'ANVI EXPORTS',
+    title: 'Mercantile & Trade Logistics',
+    subtitle: 'ANVI MERCANTILE PVT, LTD.',
     description: 'International commodity trading, end-to-end freight logistics, and global market distribution.',
     image: '/assets/im.webp',
-    stats: '25+ Global Destination Markets'
+    stats: 'anvimercantile.in',
+    url: 'https://www.anvimercantile.in/'
   },
   {
     id: 'i',
