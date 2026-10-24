@@ -83,7 +83,7 @@ export default function Header() {
     <header className={`header ${menuOpen ? 'menu-open' : ''} ${scrolled ? 'is-scrolled' : ''} ${isHomeTop ? 'at-top' : 'has-bg'}`}>
       <Link to="/" className="brand" aria-label="ANVI GROUPS home">
         <img
-          src="/l.webp"
+          src="/icon.webp"
           onError={(e) => {
             e.target.onerror = null;
             e.target.src = '/assets/l.png';
