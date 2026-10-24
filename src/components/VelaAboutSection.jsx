@@ -126,7 +126,7 @@ export default function VelaAboutSection() {
                 <span className="vela-headline-serif">moves like light.</span>
               </h1>
               <p>
-                Built by ANVI GROUPS to accelerate business growth globally. Jashwanth Rao Gajvelli and family serve with quality — delivering next-generation software development, global mercantile trade logistics, and high-impact digital solutions.
+                Built by ANVI GROUPS to accelerate business growth globally. Jashwanth Rao Gajvelli, Director of ANVI GROUPS, and family serve with excellence — serving and delivering quality products, next-generation software development, global mercantile trade logistics, and high-impact enterprise solutions.
               </p>
             </section>
 

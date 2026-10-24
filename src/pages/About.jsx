@@ -12,7 +12,7 @@ export default function About() {
       role: 'Director & Founder',
       craft: 'Director',
       mark: 'J',
-      bio: 'Founder and Director of ANVI GROUPS, Jashwanth Rao Gajvelli steers corporate vision across enterprise software, international mercantile trade, and industrial investments.',
+      bio: 'Director and Founder of ANVI GROUPS, Jashwanth Rao Gajvelli steers corporate vision — serving and delivering quality products, enterprise software solutions, and global mercantile trade logistics.',
       linkLabel: 'Connect',
       href: '/contact'
     },
@@ -127,10 +127,10 @@ export default function About() {
             </div>
             <div className="who-right">
               <p>
-                Founded and directed by Jashwanth Rao Gajvelli, ANVI GROUPS operates as a catalyst for scalable transformation across Asia and global markets. From high-capacity software platforms to international mercantile trade logistics, our companies provide the backbone for modern economic ecosystems.
+                Founded and directed by Jashwanth Rao Gajvelli, ANVI GROUPS operates as a catalyst for scalable transformation across Asia and global markets. Serving and delivering quality products, high-capacity enterprise software platforms, and international mercantile trade logistics, our companies provide the backbone for modern economic ecosystems.
               </p>
               <p>
-                Under the executive stewardship of Jashwanth Rao Gajvelli and family, we maintain an unyielding commitment to capital efficiency, operational rigor, and environmental responsibility, ensuring every enterprise yields multi-generational benefits.
+                Under the executive stewardship of Jashwanth Rao Gajvelli, Director of ANVI GROUPS, and family, we maintain an unyielding commitment to quality, capital efficiency, operational rigor, and environmental responsibility, ensuring every enterprise yields multi-generational benefits.
               </p>
             </div>
           </div>

@@ -24,7 +24,7 @@ export default function Home() {
             </div>
             <div className="intro-right">
               <p className="intro-lead">
-                ANVI GROUPS is a multi-sector corporate enterprise building high-impact technology, infrastructure, digital networks, and industrial growth platforms across Asia and global markets.
+                Led by Director Jashwanth Rao Gajvelli, ANVI GROUPS is a multi-sector corporate enterprise dedicated to serving and delivering quality products, next-generation software development, and global mercantile trade logistics across international markets.
               </p>
               <p className="intro-text">
                 With a commitment to long-term value creation, responsible capital allocation, and continuous innovation, we develop solutions that empower communities and drive sustainable economic progress.
