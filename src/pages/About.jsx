@@ -8,11 +8,11 @@ import DuotoneTeamRoster from '../components/ui/duotone-team-roster';
 export default function About() {
   const executiveMembers = [
     {
-      name: 'Jashwanth',
-      role: 'Director',
+      name: 'Jashwanth Rao Gajvelli',
+      role: 'Director & Founder',
       craft: 'Director',
       mark: 'J',
-      bio: 'Directing ANVI GROUPS with enduring vision, leading strategic initiatives across enterprise software, industrial investments, and international business growth.',
+      bio: 'Founder and Director of ANVI GROUPS, Jashwanth Rao Gajvelli steers corporate vision across enterprise software, international mercantile trade, and industrial investments.',
       linkLabel: 'Connect',
       href: '/contact'
     },
@@ -127,10 +127,10 @@ export default function About() {
             </div>
             <div className="who-right">
               <p>
-                Founded on the belief that economic strength and innovation must go hand-in-hand, ANVI GROUPS operates as a catalyst for scalable transformation. From high-capacity cloud data platforms to smart transportation hubs, our companies provide the backbone for modern economic ecosystems.
+                Founded and directed by Jashwanth Rao Gajvelli, ANVI GROUPS operates as a catalyst for scalable transformation across Asia and global markets. From high-capacity software platforms to international mercantile trade logistics, our companies provide the backbone for modern economic ecosystems.
               </p>
               <p>
-                We maintain an unyielding commitment to capital efficiency, operational rigor, and environmental responsibility, ensuring every project yields multi-generational benefits.
+                Under the executive stewardship of Jashwanth Rao Gajvelli and family, we maintain an unyielding commitment to capital efficiency, operational rigor, and environmental responsibility, ensuring every enterprise yields multi-generational benefits.
               </p>
             </div>
           </div>

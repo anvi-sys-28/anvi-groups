@@ -30,6 +30,7 @@ export default function Footer() {
           title: "Connect",
           links: [
             { label: "support@anvigroups.in", href: "mailto:support@anvigroups.in" },
+            { label: "jashwanth@anvigroups.in", href: "mailto:jashwanth@anvigroups.in" },
             { label: "Global HQ · Kapra, Hyderabad, INDIA", href: "/contact" }
           ]
         }

@@ -81,7 +81,7 @@ export default function Contact() {
                   <div>
                     <strong>Email Enquiries</strong>
                     <p>Support: <a href="mailto:support@anvigroups.in">support@anvigroups.in</a></p>
-                    <p>Director: <a href="mailto:jashwanth@anvigroups.in">jashwanth@anvigroups.in</a></p>
+                    <p>Director (Jashwanth Rao Gajvelli): <a href="mailto:jashwanth@anvigroups.in">jashwanth@anvigroups.in</a></p>
                     <p>Managing Director: <a href="mailto:rohan@anvigroups.in">rohan@anvigroups.in</a></p>
                     <p>Legal Advisor: <a href="mailto:vasavi@anvigroups.in">vasavi@anvigroups.in</a></p>
                   </div>
